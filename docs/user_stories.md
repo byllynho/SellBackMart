@@ -1,14 +1,6 @@
 # User Stories
 
 - Project: SellBackMart (Nickname of project goes here)
-
-## xxx (Second-level headings optionally may be used to group/categorize USs by type of functionality)
-
-- US xxx (Title of user story goes here)
-  - Description: xxx (Description of user store goes here)
-  - Estimate: xxx (Number of days of work required to implement the US)
-  - Priority: xxx (US priority number goes here)
-  - Status: xxx (US status)
   
 - US Delete profile (Title of user story goes here)
   - Description: As a user, I should be able to delete my profile whenever I wish to. (Description of user store goes here)
