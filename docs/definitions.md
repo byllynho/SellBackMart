@@ -2,8 +2,6 @@
 
 - Project: SellBackMart
 
-## xxx (Second-level headings optionally may be used to organize definitions)
-
 - User: a UofM student. Name and UofM email will be required to create a user account. A User can simultaneously be a Buyer and a Seller.
 
 - Item/product catagories: initially it will have 3 catagories: Textbooks, School supplies and Electronics. More catagories could be added later.
