@@ -29,13 +29,13 @@
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
   
-- US Search categories
+- US Search products by category
   - Description: As a Buyer, I want to select which categories of products to view, so that I am not distracted by unrelated products, and I can find what I want.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
   
-- US Sort by category
+- US Sort products by category
   - Description: As a Buyer, I want to sort the catalog listings by category, so that I see related items close to each other, and can compare them.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
