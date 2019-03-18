@@ -88,3 +88,33 @@
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
 
+- US Receive email notifications
+  - Description: As a Student, I want to get email notifications, so that I can stay updated on relevant activity.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
+- US Choose notification settings
+  - Description: As a Student, I want to choose which notifications I receive, so that I am not flooded with emails.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+  
+- US Have private messages
+  - Description: As a Student, I want to have private conversations with other Students, so we can talk about details regarding the items for sale.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
+- US View activity history
+  - Description: As a Student, I want to see a history of items I have bought or sold, so that I can have a record of my activity.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
+- US Post Seller Review
+  - Description: As a Student, I want to post a Seller Review, so other people can know whether this seller is good or bad.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
