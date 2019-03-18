@@ -70,12 +70,6 @@
   - Priority: xxx
   - Status: xxx
   
-- US Post item
-  - Description: As a User, I will be able to post an item that belongs to a category and add information such as description, status (used, new and like new) and price.
-  - Estimate: xxx
-  - Priority: xxx
-  - Status: xxx
-  
 - US Upload files about an item
   - Description: As a User, I will able to upload files about the item I am selling, such as pictures and proof of purchase so the buyer could check these files.
   - Estimate: xxx
