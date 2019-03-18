@@ -35,7 +35,7 @@
   - Status: xxx 
   
 - US Sort products by category
-  - Description: As a User, I want to sort the catalog listings by category, so that I see related items close to each other, and can compare them.
+  - Description: As a User, I want to sort the product listings by category, so that I see related items close to each other, and can compare them.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx
