@@ -1,4 +1,4 @@
-# xxx (Project Nickname)
+# SellBackMart (Project Nickname)
 
 ## How to Run the Web App (Instructions for the Instructors)
 
