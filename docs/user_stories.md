@@ -1,12 +1,12 @@
 # User Stories
 
-- Project: SellBackMart (Nickname of project goes here)
+- Project: SellBackMart
   
-- US Delete profile (Title of user story goes here)
-  - Description: As a user, I should be able to delete my profile whenever I wish to. (Description of user store goes here)
-  - Estimate: xxx (Number of days of work required to implement the US)
-  - Priority: xxx (US priority number goes here)
-  - Status: xxx (US status)
+- US Delete profile
+  - Description: As a user, I should be able to delete my profile whenever I wish to.
+  - Estimate: xxx
+  - Priority: xxx
+  - Status: xxx
 
 - US Post product info
   - Description: As a User, I want to post information about a product I am selling, so that potential buyers can see that information.
