@@ -64,8 +64,7 @@
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
-  
- - US post item
+- US post item
   - Description: As a seller, I will able to post an item that belongs to a category and add information such as description, status (used, new and like new) and price.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
