@@ -3,7 +3,7 @@
 - Project: SellBackMart
   
 - US Delete profile
-  - Description: As a user, I should be able to delete my profile whenever I wish to.
+  - Description: As a user, I should be able to delete my profile so that I can remove my information when I dont want to use the app anymore.
   - Estimate: xxx
   - Priority: xxx
   - Status: xxx
