@@ -59,12 +59,6 @@
   - Priority: xxx 
   - Status: xxx
   
-- US Visitant communication
-  - Description: As a User, I will not be able to communicate with other users.
-  - Estimate: xxx 
-  - Priority: xxx 
-  - Status: xxx 
-  
 - US Check profile
   - Description: As a User, I want to be able to check other Users' profiles out.
   - Estimate: xxx 
