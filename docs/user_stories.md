@@ -41,17 +41,23 @@
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
   
-- US create a user
+- US Create a User Account
   - Description: As a Visitant, I want to be able to create a account for myself.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
   
-- US create a user
+- US Log into account
   - Description: As a Visitant, I will to be able to log in my account.
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
+  
+- US Log out of account
+  - Description: As a Student, I will to be able to log out of my account.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)  
   
 - US visitant communication
   - Description: As a Visitant, I will not be able to communicate with other users.
