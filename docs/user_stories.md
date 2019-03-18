@@ -64,3 +64,28 @@
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
+  
+ - US post item
+  - Description: As a seller, I will able to post an item that belongs to a category and add information such as description, status (used, new and like new) and price.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+  
+- US upload files about an item
+  - Description: As a seller, I will able to upload files about the item I post such as pictures and proof of purchase so the buyer could check these files.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+  
+- US edit an item
+  - Description: As a seller, I will able to edit the information of the item I post to make some change.  
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+  
+- US mark an item as sold
+  - Description: As a seller, I will able to mark the item I post as sold so I can close the deal of this item.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+
