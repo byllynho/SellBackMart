@@ -40,3 +40,27 @@
   - Estimate: xxx (Number of days of work required to implement the US)
   - Priority: xxx (US priority number goes here)
   - Status: xxx (US status)
+  
+- US create a user
+  - Description: As a Visitant, I want to be able to create a account for myself.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+  
+- US create a user
+  - Description: As a Visitant, I will to be able to log in my account.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+  
+- US visitant communication
+  - Description: As a Visitant, I will not be able to communicate with other users.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
+  
+- US check profile
+  - Description: As a User, I want to be able to check other users profiles out.
+  - Estimate: xxx (Number of days of work required to implement the US)
+  - Priority: xxx (US priority number goes here)
+  - Status: xxx (US status)
