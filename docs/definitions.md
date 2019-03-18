@@ -6,5 +6,5 @@
 
 xxx (Definitions of terms and concepts go here)
 
-Buyer -
-Seller -
+- Buyer
+- Seller
