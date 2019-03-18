@@ -4,7 +4,18 @@
 
 ## xxx (Second-level headings optionally may be used to organize definitions)
 
-xxx (Definitions of terms and concepts go here)
+- User: a UofM student. Name and UofM email will be required to create a user account.
 
-- Buyer
-- Seller
+- Buyer : a user who is try to sell item.
+
+- Seller: a user who is try to buy item.
+
+- Item/production catagories: initially it will have 3 catagories: Textbooks, School supplies and Electronics. More catagories could be added later.
+
+- Item: the following information are required when selling an item: 
+     - Category (pick from list of choices) 
+     - Condition (New/Used)
+     - Price
+     - Additional info (optional, up to the seller to fill out or not) 
+
+- Textbook: if an item belongs to textbook, it will have author, title, version and ISBN.
