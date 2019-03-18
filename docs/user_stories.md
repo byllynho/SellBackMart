@@ -42,25 +42,25 @@
   - Status: xxx
   
 - US Create a User Account
-  - Description: As a User, I want to be able to create a account for myself.
+  - Description: As a User, I want to be able to create a account for myself, so that I can interact with other Users.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx
   
 - US Log into account
-  - Description: As a User, I will to be able to log in my account.
+  - Description: As a User, I will to be able to log in my account, so I can manage my activity.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx
   
 - US Log out of account
-  - Description: As a User, I will to be able to log out of my account.
+  - Description: As a User, I will to be able to log out of my account, so that my information is secure.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx
   
 - US Check profile
-  - Description: As a User, I want to be able to check other Users' profiles out.
+  - Description: As a User, I want to be able to check other Users' profiles out, so that I can find out more about those Users.
   - Estimate: xxx 
   - Priority: xxx
   - Status: xxx
@@ -78,13 +78,13 @@
   - Status: xxx
   
 - US Edit an item
-  - Description: As a User, I will able to edit the information of the item I post to make some change.  
+  - Description: As a User, I will able to edit the information of the item I post, so that I can make some changes if necessary.  
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx 
   
 - US Mark an item as sold
-  - Description: As a User, I will able to mark the item I post as sold so I can close the deal of this item.
+  - Description: As a User, I will able to mark the item I post as sold, so that I can close the deal of this item.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx 
