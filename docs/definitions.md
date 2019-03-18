@@ -2,7 +2,7 @@
 
 - Project: SellBackMart
 
-
+## List of Definitions
 
 - User: a UofM student. Name and UofM email will be required to create a user account. A User can simultaneously be a Buyer and a Seller.
 
