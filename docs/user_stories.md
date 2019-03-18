@@ -100,6 +100,12 @@
   - Priority: xxx 
   - Status: xxx
   
+- US Create watchlist
+  - Description: As a User, I will be able to create a watchlist of items that I want to buy, so that I will get notification when the item on watchlist is available.
+  - Estimate: xxx 
+  - Priority: xxx 
+  - Status: xxx
+  
 - US Have private messages
   - Description: As a User, I want to have private conversations with other Students, so we can talk about details regarding the items for sale.
   - Estimate: xxx 
