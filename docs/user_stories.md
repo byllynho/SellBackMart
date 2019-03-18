@@ -4,12 +4,6 @@
 
 ## List of User Stories
   
-- US Delete profile
-  - Description: As a User, I should be able to delete my profile so that I can remove my information when I dont want to use the app anymore.
-  - Estimate: xxx
-  - Priority: xxx
-  - Status: xxx
-
 - US Post product info
   - Description: As a User, I want to post information about a product I am selling, so that potential buyers can see that information.
   - Estimate: xxx
@@ -46,6 +40,12 @@
   - Priority: xxx 
   - Status: xxx
   
+- US Delete profile
+  - Description: As a User, I should be able to delete my profile so that I can remove my information when I dont want to use the app anymore.
+  - Estimate: xxx
+  - Priority: xxx
+  - Status: xxx
+
 - US Log into account
   - Description: As a User, I will to be able to log in my account, so I can manage my activity.
   - Estimate: xxx 
@@ -75,7 +75,13 @@
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx 
-  
+
+- US Delete item
+  - Description: As a User, I want to delete my posted item so that I can remove it from the app if it does not sell for a long time. 
+  - Estimate: xxx
+  - Priority: xxx
+  - Status: xxx
+
 - US Mark an item as sold
   - Description: As a User, I will able to mark the item I post as sold, so that I can close the deal of this item.
   - Estimate: xxx 
