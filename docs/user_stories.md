@@ -107,7 +107,7 @@
   - Status: xxx
   
 - US Have private messages
-  - Description: As a User, I want to have private conversations with other users, so we can talk about details regarding the items for sale.
+  - Description: As a User, I want to have private conversations with other Users, so we can talk about details regarding the items for sale.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx 
