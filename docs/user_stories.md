@@ -5,19 +5,19 @@
 ## List of User Stories
   
 - US Post product info
-  - Description: As a User, I want to post information about a product I am selling, so that potential buyers can see that information.
+  - Description: As a User, I want to post information about an item I am selling, so that potential buyers can see that information.
   - Estimate: xxx
   - Priority: xxx
   - Status: xxx
 
 - US Ask question
-  - Description: As a User, I want to ask the seller of a product a question about that product, so that I can decide whether or not to buy it.
+  - Description: As a User, I want to ask the seller a question about an item, so that I can decide whether or not to buy it.
   - Estimate: xxx
   - Priority: xxx
   - Status: xxx
   
 - US Answer question
-  - Description: As a User, I want to answer a question about my product, so that potential buyers can see the answer.
+  - Description: As a User, I want to answer a question about my item, so that potential buyers can see the answer.
   - Estimate: xxx
   - Priority: xxx
   - Status: xxx
@@ -35,7 +35,7 @@
   - Status: xxx
   
 - US Create a User Account
-  - Description: As a User, I want to be able to create a account for myself, so that I can interact with other Users.
+  - Description: As a User, I want to be able to create an account for myself, so that I can interact with other Users.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx
@@ -47,13 +47,13 @@
   - Status: xxx
 
 - US Log into account
-  - Description: As a User, I will to be able to log in my account, so I can manage my activity.
+  - Description: As a User, I will be able to log in my account, so I can manage my activity.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx
   
 - US Log out of account
-  - Description: As a User, I will to be able to log out of my account, so that my information is secure.
+  - Description: As a User, I will be able to log out of my account, so that my information is secure.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx
@@ -65,13 +65,13 @@
   - Status: xxx
   
 - US Upload files about an item
-  - Description: As a User, I will able to upload files about the item I am selling, such as pictures and proof of purchase so the buyer could check these files.
+  - Description: As a User, I will be able to upload files about the item I am selling, such as pictures and proof of purchase so the buyer could check these files.
   - Estimate: xxx
   - Priority: xxx
   - Status: xxx
   
 - US Edit an item
-  - Description: As a User, I will able to edit the information of the item I post, so that I can make some changes if necessary.  
+  - Description: As a User, I will be able to edit the information of the item I post, so that I can make some changes if necessary.  
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx 
@@ -83,7 +83,7 @@
   - Status: xxx
 
 - US Mark an item as sold
-  - Description: As a User, I will able to mark the item I post as sold, so that I can close the deal of this item.
+  - Description: As a User, I will be able to mark the item I post as sold, so that I can close the deal of this item.
   - Estimate: xxx 
   - Priority: xxx 
   - Status: xxx 
