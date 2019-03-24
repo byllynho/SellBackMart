@@ -10,8 +10,8 @@
   - Priority: xxx
   - Status: Not started
 
-- US Ask question
-  - Description: As a Buyer, I want to ask the seller a question about an item, so that I can decide whether or not to buy it.
+- US Write public comments
+  - Description: As a Buyer, I want to post public comments about an item, so that I can discuss publicly with all the potiential buyers of that item.
   - Estimate: xxx
   - Priority: xxx
   - Status: Not started
