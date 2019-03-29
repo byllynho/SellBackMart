@@ -10,6 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_03_29_211543) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "description", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "title", null: false
+    t.float "price", null: false
+    t.string "image"
+    t.integer "condition", default: 0, null: false
+    t.boolean "inactive", default: false
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.text "content", null: false
+    t.boolean "read"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_messages_on_recipient_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.text "review"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "item_id"
+    t.index ["item_id"], name: "index_transactions_on_item_id"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password", null: false
+    t.string "department"
+    t.string "major"
+    t.boolean "validated", default: false
+    t.string "validation_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
