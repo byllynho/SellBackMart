@@ -1,0 +1,34 @@
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#body" class="scrollto">SellBack<span>Mart</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <% if controller.controller_name == "pages" && controller.action_name == "home" %>
+            <li class="menu-active"><a href="#body">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
+          <% elsif controller.controller_name == "users" && controller.action_name == "sign_up" %>
+            <li class="menu-active"><a href="#body">Home</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+          <% elsif controller.controller_name == "users" && controller.action_name == "sign_up" %>
+            <li class="menu-active"><a href="#body">Catalog</a></li>
+            <li><a href="#about">User</a></li>
+            <li><a href="#services">Test</a></li>
+            <li><a href="#testimonials">Others</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal">Log out</a></li>
+          <% end %>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
