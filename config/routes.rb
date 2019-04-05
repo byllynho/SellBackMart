@@ -5,5 +5,12 @@ Rails.application.routes.draw do
 
   get 'home', to: 'pages#home', as: 'home'
   get 'about', to: 'pages#about', as: 'about'
+
+  get 'items', to: 'items#index', as: 'items'
+  post 'items', to: 'items#create'
+
+  get 'items/new', to:'items#new', as:'post_new_item'
+
+  get 'items/:id', to:'items#show', as:'item'
   
 end

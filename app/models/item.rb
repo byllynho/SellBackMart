@@ -31,6 +31,6 @@ class Item < ApplicationRecord
         class_name: 'User', 
         foreign_key: 'user_id', 
         inverse_of: :items,
-        optional: false
+        optional: true
 
 end

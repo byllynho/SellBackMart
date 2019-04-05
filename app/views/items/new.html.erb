@@ -1,0 +1,40 @@
+<main role ="main" class ="container">
+
+<h1>New Item </h1>
+
+  <%= form_with model: @item, local: true do |form| %>
+     <div class = "field">
+         <%= form.label :image %>
+         <%= form.file_field :image %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :title %>
+         <%= form.text_field :title, class:'form-control' %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :price %>
+         <%= form.text_field :price, class:'form-control' %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :condition %>
+         <%= form.text_field :condition, class:'form-control' %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :category_id %>
+         <%= form.text_field :category_id, class:'form-control' %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :description %>
+         <%= form.text_field :description, class:'form-control' %>
+     </div>
+
+     <div class = "actions">
+         <%= form.submit 'Post Item', class: 'btn btn-primary' %>
+     </div>
+  <% end %>
+</main><!-- /.container -->
