@@ -5,15 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user_1 = User.create!(name: "Thomas Edison", email: "eth3@memphis.edu", password: 123456, department: "Computer Science", 
-    major:"Computer Science", validated: true, validation_code:"123543" )
+user_1 = User.create!(name: "Thomas Edison", email: "eth3@memphis.edu", password: "123456", department: "Computer Science", 
+    major:"Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
+    confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00" )
 item_1 = user_1.items.build(description: '11111', price: 5, title:'Apple watch', condition: 'good')
 
 
 
 
-user_2 = User.create!(name: "Isaac Newton", email: "nis5@memphis.edu", password: 654321, department: "Computer Science", 
-    major:"Computer Science", validated: true, validation_code:"123543" )
+user_2 = User.create!(name: "Isaac Newton", email: "nis5@memphis.edu", password: "654321", department: "Computer Science", 
+    major:"Computer Science" ,confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
+    confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00")
 set_1 = user_1.deals.build(review: 'Good seller!')
 
 item_2 = user_2.items.build(description: 'not blank', price: 67, title:'ipad2', condition: 'used')

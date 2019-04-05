@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def my_profile
     #need change when merge with log-in"
-    @user = User.find(1)
+    @user = current_user
   end
 
 end
