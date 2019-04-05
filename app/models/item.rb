@@ -22,12 +22,12 @@
 
 class Item < ApplicationRecord
     has_one :transactions, 
-        class_name: 'Transactions', 
+        class_name: 'Transaction', 
         foreign_key: 'item_id', 
         inverse_of: :item,
         dependent: :destroy
 
-    belongs_to :user, 
+    belongs_to :seller, 
         class_name: 'User', 
         foreign_key: 'user_id', 
         inverse_of: :items,

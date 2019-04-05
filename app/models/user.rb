@@ -29,13 +29,13 @@ class User < ApplicationRecord
          :recoverable, :validatable, :confirmable
          
     has_many :items, 
-        class_name: 'Items', 
+        class_name: 'Item', 
         foreign_key: 'user_id', 
         inverse_of: :seller,
         dependent: :destroy
     
     has_many :transactions, 
-        class_name: 'Transactions', 
+        class_name: 'Transaction', 
         foreign_key: 'user_id', 
         inverse_of: :buyer,
         dependent: :destroy

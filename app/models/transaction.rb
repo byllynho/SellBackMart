@@ -23,8 +23,8 @@ class Transaction < ApplicationRecord
         optional: false
     
     belongs_to :item, 
-        class_name: 'Items', 
+        class_name: 'Item', 
         foreign_key: 'item_id', 
-        inverse_of: :item,
+        inverse_of: :transactions,
         optional: false
 end
