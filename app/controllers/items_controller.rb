@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-
+    layout 'standart'
+    before_action :authenticate_user!
     def view_item
         begin
             @item = Item.find(params[:id])
