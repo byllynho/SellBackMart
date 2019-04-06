@@ -2,17 +2,21 @@
 #
 # Table name: items
 #
-#  id          :integer          not null, primary key
-#  condition   :integer          default(0), not null
-#  description :text             not null
-#  image       :string
-#  inactive    :boolean          default(FALSE)
-#  price       :float            not null
-#  title       :string           not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  category_id :integer
-#  user_id     :integer
+#  id                  :integer          not null, primary key
+#  avatar_content_type :string
+#  avatar_file_name    :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  condition           :integer          default(0), not null
+#  description         :text             not null
+#  image               :string
+#  inactive            :boolean          default(FALSE)
+#  price               :float            not null
+#  title               :string           not null
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  category_id         :integer
+#  user_id             :integer
 #
 # Indexes
 #
@@ -21,6 +25,12 @@
 #
 
 class Item < ApplicationRecord
+    has_attached_file :avatar, 
+      :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
+      :url => "/system/:attachment/:id/:style/:filename",   
+      styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#>"}
+    validates_attachment_content_type :avatar, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
     has_one :transactions, 
         class_name: 'Transactions', 
         foreign_key: 'item_id', 

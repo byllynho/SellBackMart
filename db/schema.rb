@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_29_211543) do
+ActiveRecord::Schema.define(version: 2019_04_06_151621) do
 
   create_table "categories", force: :cascade do |t|
     t.string "description", null: false
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 2019_03_29_211543) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "category_id"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end

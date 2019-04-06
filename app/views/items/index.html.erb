@@ -1,7 +1,7 @@
 <main role ="main" class ="container">
 
 <h1>List of Items</h1>
-
+<!--
 <table class="table table-sm">
   <thead>
     <tr>
@@ -19,7 +19,7 @@
       <tr>
          <td><%= item.title %></td>
          <td><%= item.price %></td>
-         <td><%= item.image %></td>
+         <td><%= item.avatar %></td>
          <td><%= item.condition %></td>
          <td><%= item.inactive %></td>
          <td><%= item.description %></td>
@@ -27,6 +27,25 @@
       </tr>
     <% end %>
   </tbody>
+-->
+  <div class="card-deck">
+    <% @items.each do |item| %>
+      <div class="card">
+       <%= item.avatar %>
+       <div class="card-body">
+          <h5 class="card-title">Title:<%= item.title %></h5>
+          <p class="card-text">Price:<%= item.price %></p>
+          <p class="card-text">Condition:<%= item.condition %></p>
+          <p class="card-text">Description:<%= item.description %></p>
+          <p class="card-text">Inactive:<%= item.inactive %></p>
+       </div>
+       <div class="card-footer">
+          <small class="text-muted"><%= link_to 'Show', item_path(item) %></small>
+       </div>
+      </div>
+    <% end %>
+  </div>
+
 </table>
 
 </main><!-- /.container -->

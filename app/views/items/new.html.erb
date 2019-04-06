@@ -2,10 +2,10 @@
 
 <h1>New Item </h1>
 
-  <%= form_with model: @item, local: true do |form| %>
+  <%= form_with model: @item, local:true, html: { multipart: true } do |form| %>
      <div class = "field">
          <%= form.label :image %>
-         <%= form.file_field :image %>
+         <%= form.file_field :avatar %>
      </div>
 
      <div class = "field">
@@ -31,6 +31,11 @@
      <div class = "field">
          <%= form.label :description %>
          <%= form.text_field :description, class:'form-control' %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :inactive %>
+         <%= form.text_field :inactive, class:'form-control' %>
      </div>
 
      <div class = "actions">
