@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'home', to: 'pages#home', as: 'home'
-  get 'about', to: 'pages#about', as: 'about'
   get 'view_item_:id', to: 'items#view_item', as: 'item'
   get 'items', to: 'users#open_page', as: 'open_page'
   
