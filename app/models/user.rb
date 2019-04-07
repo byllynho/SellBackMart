@@ -24,8 +24,8 @@ class User < ApplicationRecord
     has_many :transactions, 
         class_name: 'Transactions', 
         foreign_key: 'user_id', 
-        inverse_of: :buyer,
-        dependent: :destroy
+        inverse_of: :buyer
+        #dependent: :destroy
 
     has_many :sent_messages, :class_name => 'Message', :foreign_key => 'sender_id'
     has_many :received_messages, :class_name => 'Message', :foreign_key => 'recipient_id'
