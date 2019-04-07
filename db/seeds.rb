@@ -13,7 +13,7 @@ user_1 = User.create!(name: "Admin Istrator", email: "admin@memphis.edu", major:
     password: "123456" )
 item_1 = user_1.items.build(description: "This is my item. Please buy it.", price: 3.25, title: "My Awesome Item", category_id: 1)
 item_1.update(photo_file_name: 'bopit.jpg')
-item_2 = user_1.items.build(description: "This weird guy with a terrible beard keeps bothering me. I will pay someone to get him to leave.", price: -10, title: "Weird Guy With Beard", category_id: 1)
+item_2 = user_1.items.build(description: "This weird guy with a terrible beard keeps bothering me. I will pay someone to get him to leave.", price: -10, title: "Weird Guy With Beard", category_id: 2)
 item_2.update(photo_file_name: 'beard.jpg')
 user_1.save!
 
@@ -21,4 +21,6 @@ user_2 = User.create!(name: "Andrew", email: "andrew@memphis.edu", major: "Compu
     department: "Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00",
     password: "123456" )
+item_3 = user_2.items.build(description: "Textbook by C.S. Lewis", price: 12, title: "The Pilgrim's Guide", category_id: 3)
+
 user_2.save!

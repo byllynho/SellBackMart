@@ -2,8 +2,7 @@
 <h1> <%= @item.title%> </h1>
 <div class='flex-container' style='display: flex'>
    
-    <% if %>
-        <% @item.photo != nil %>
+    <% if @item.photo_file_name != nil%>
         <div class='big photo' style='padding-bottom: 20px'>
             <%= image_tag(@item.photo.url,size: '300x300') %>
         </div>

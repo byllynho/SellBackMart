@@ -2,12 +2,14 @@
 
 <div class='filters', style='border-style: ridge; border-radius: 5px; display: inline-block; float: left; padding: 1em; margin-right: 1em'>
     <p><strong>Search Filters</strong></p>
+<%= form_tag filter_url, method: :get %>
     <p>
         Categories <br>
-        &nbsp &nbsp &nbsp Textbooks <br>
-        &nbsp &nbsp &nbsp Electronics <br>
-        &nbsp &nbsp &nbsp School Supplies
+        &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '1' %>Textbooks <br>
+        &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '2' %>Electronics <br>
+        &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '3' %> School Supplies
     </p>
+    <%= submit_tag 'Submit' %>
 </div>
 
 
@@ -17,10 +19,12 @@
             <div style='border-style: ridge; margin-top: 1em'>
                 <%= link_to item.title, item_path(item) %><br>
                 $<%= item.price %><br>
+                Category <%= item.category_id%> <br>
                 <%= item.user_id %><br>
                 Posted: <%= item.created_at.strftime("%b %d, %Y") %><br>
             </div>
         </div>
+        
         
     <% end %>
     

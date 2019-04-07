@@ -17,4 +17,9 @@ class ItemsController < ApplicationController
         @items = Item.all
         # render items/catalog.html.erb
     end
+
+    def filter
+        @items = Item.where("category_id IN (?)", params[:categories])
+        render "items/catalog.html.erb"
+    end
 end
