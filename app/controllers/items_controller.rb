@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
             @item = Item.find(params[:id])
 
         rescue
-            redirect_to home_url, alert: "Sorry. The item you requested does not exist."
+            redirect_to catalog_url, alert: "Sorry. The item you requested does not exist."
             
         end
         # render items/view_item.html.erb
