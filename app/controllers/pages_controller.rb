@@ -1,11 +1,5 @@
 class PagesController < ApplicationController
+  layout 'first_page'
   
-    def home
-      
-    end
-  
-  
-  
-  
-  end
+end
   

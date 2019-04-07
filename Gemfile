@@ -68,3 +68,5 @@ end
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem "paperclip", "~> 6.0.0"
+
+gem 'devise'

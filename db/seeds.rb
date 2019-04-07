@@ -16,8 +16,10 @@ user1.items.build(title:'Machine Learning by Mitchell',price:'$100',image:'machi
     description:'A new textbook in perfect condition')
 =end
 
-user_1 = User.new(name: "Admin Istrator", email: "admin@memphis.edu", major: "Computer Science", 
-    department: "Computer Science",password: "123456" )
+user_1 = User.create!(name: "Admin Istrator", email: "admin@memphis.edu", major: "Computer Science", 
+    department: "Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
+    confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00",
+    password: "123456" )
 item_1 = user_1.items.build(avatar:'',title:'Apple Macbook',price:300.00,condition:2,category_id:2,description:'Its just 2 year old laptop. Good condition and latest upgraded OS',
     inactive:false)
 # item_1.update(avatar_file_name:'textbooks.png')
