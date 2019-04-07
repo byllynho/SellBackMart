@@ -34,7 +34,8 @@ class Item < ApplicationRecord
 
     has_attached_file :avatar,  
       styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#>"}, default_url: 'textbooks.png'
-    validates_attachment_content_type :avatar, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+      validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+      
 
     has_one :transactions, 
         class_name: 'Transactions', 

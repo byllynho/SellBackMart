@@ -60,7 +60,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Paperclip config:
-  Paperclip.options[:image_magick_path] = "/usr/local/bin/"
   Paperclip.options[:command_path] = "/usr/local/bin/"
-
 end

@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
     end
 
     def create
-        @item = Item.new(params.require(:item).permit(:avatar, :title, :price, :condition, :category_id, :description, :inactive))
+        @item = Item.new(params.require(:item).permit(:avatar,:title, :price, :condition, :category_id, :description, :inactive))
         if @item.save
             redirect_to item_url(@item), notice: 'Your item has been successfully posted'
         else
