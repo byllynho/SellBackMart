@@ -31,14 +31,14 @@ class User < ApplicationRecord
     has_many :items, 
         class_name: 'Item', 
         foreign_key: 'user_id', 
-        inverse_of: :user,
+        inverse_of: :seller,
         dependent: :destroy
     
     has_many :deals, 
         class_name: 'Transaction', 
         foreign_key: 'user_id', 
-        inverse_of: :buyer
-        #dependent: :destroy
+        inverse_of: :buyer,
+        dependent: :destroy
 
     has_many :sent_messages, :class_name => 'Message', :foreign_key => 'sender_id'
     has_many :received_messages, :class_name => 'Message', :foreign_key => 'recipient_id'

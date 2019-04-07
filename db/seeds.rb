@@ -5,11 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 user_1 = User.create!(name: "Thomas Edison", email: "eth3@memphis.edu", password: "123456", department: "Computer Science", 
     major:"Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00" )
-item_1 = user_1.items.build(description: '11111', price: 5, title:'Apple watch', condition: 'good')
-
+item_1 = user_1.items.build(avatar:'',title:'Apple Macbook',price:300.00,condition:2,category_id:2,description:'Its just 2 year old laptop. Good condition and latest upgraded OS',
+    inactive:false)
+user_1.save!   
 =begin
 user1 = User.new(id:1,name:'Varun Negandhi',email:'vsngndhi@memphis.edu',password:'var123',department:'CS',major:'Masters',validated:true,validation_code:'1234')
 user1.items.build(title:'Apple Macbook',price:'$300',image:'mac.png',condition:2,inactive:false,
@@ -18,7 +20,7 @@ user1.items.build(title:'Distributed Systems Textbook',price:'$30',image:'os.png
     description:'Textbook for the distributed computing course')
 user1.items.build(title:'Machine Learning by Mitchell',price:'$100',image:'machine.png',condition:8,inactive:false,
     description:'A new textbook in perfect condition')
-=end
+
 
 
 
@@ -42,8 +44,6 @@ user_3 = User.create!(name: "Admin Istrator", email: "admin@memphis.edu", major:
     department: "Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00",
     password: "123456" )
-item_1 = user_1.items.build(avatar:'',title:'Apple Macbook',price:300.00,condition:2,category_id:2,description:'Its just 2 year old laptop. Good condition and latest upgraded OS',
-    inactive:false)
 # item_1.update(avatar_file_name:'textbooks.png')
 
 user_1.items.build(avatar:'',title:'Iphone X',price:200.25,condition:2,inactive:false,
@@ -54,3 +54,4 @@ user_1.items.build(avatar:'',title:'Distributed Computing Textbook',price:78.25,
 user_1.save!
         
 user_3.save!
+=end

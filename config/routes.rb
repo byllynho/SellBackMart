@@ -11,11 +11,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations' ,
     sessions: 'users/sessions'
   }
-  
- 
-
-  get 'home', to: 'pages#home', as: 'home'
-  get 'about', to: 'pages#about', as: 'about'
 
   get 'items', to: 'items#index', as: 'items'
   post 'items', to: 'items#create'
