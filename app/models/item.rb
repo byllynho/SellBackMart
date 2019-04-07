@@ -30,8 +30,8 @@
 
 class Item < ApplicationRecord
     has_attached_file :photo, styles: {large: "600x600>", medium: "300x300>", thumb: "150x150#"}
-    validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
-    has_one :transactions, 
+    validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/ 
+    has_one :settlement, 
         class_name: 'Transaction', 
         foreign_key: 'item_id', 
         inverse_of: :item,
@@ -42,5 +42,10 @@ class Item < ApplicationRecord
         foreign_key: 'user_id', 
         inverse_of: :items,
         optional: false
+
+    belongs_to :category, 
+        class_name: 'Category', 
+        foreign_key: 'category_id', 
+        inverse_of: :products
 
 end

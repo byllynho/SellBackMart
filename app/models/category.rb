@@ -7,7 +7,7 @@
 #
 
 class Category < ApplicationRecord
-    has_many :items, 
+    has_many :products, 
         class_name: 'Item', 
         foreign_key: 'category_id', 
         inverse_of: :category,

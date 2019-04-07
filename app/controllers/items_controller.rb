@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-    layout 'standart'
+    layout 'standard'
     before_action :authenticate_user!
     
     def view_item

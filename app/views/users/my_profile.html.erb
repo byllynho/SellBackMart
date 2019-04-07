@@ -1,17 +1,11 @@
-
-<% provide(:title, 'User')%>
+<% provide(:title, 'My Profile')%>
 
 <main role="main" class="container">
-<h1> <%= @user.name%> </h1>
+<h1>  My Profile </h1>
     
-<div id="left">
-  <%= image_tag("1200px-Memphis_Tigers_logo.svg.png", :size => "360x300", :alt => "Memphis Tiger Logo") %>
-    <div id ="button">
-      <input type="button" value="Send Message">
-    </div>
-</div>
 
-<div id="right">
+
+<div>
   <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item">
       <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
@@ -21,7 +15,10 @@
       <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
         aria-selected="false">Review</a>
     </li>
-    
+    <li class="nav-item">
+      <a class="nav-link" id="activity-tab" data-toggle="tab" href="#activity" role="tab" aria-controls="activity"
+        aria-selected="false">Activity</a>
+    </li>
   </ul>
 
   <div class="tab-content" id="myTabContent">
@@ -53,7 +50,7 @@
         
         <th scope="col">Item</th>
         <th scope="col">Review</th>
-								<th scope="col">Buyer</th>
+        <th scope="col">Buyer</th>
         </tr>
         </thead>
       <tbody>
@@ -73,6 +70,52 @@
      </table></p>
   
     </div>
+
+    <div class="tab-pane fade" id="activity" role="tabpanel" aria-labelledby="activity-tab">
+      <p><h4>For sale</h4>
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Price</th>
+              <th scope="col">Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @user.items.each do |record| %>
+            <tr>
+              <td><%= record.title %></td>
+              <td><%= record.price %></td>
+              <td><%= record.category.description %></td>
+            </tr>
+              <% end %>
+            </tbody>
+         </table>
+        </p>
+  
+  			<p><h4>Bought</h4>
+					<table class="table table-sm">
+						<thead>
+							<tr>
+								<th scope="col">Item</th>
+								<th scope="col">Price</th>
+								<th scope="col">Category</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @user.deals.each do |record| %>
+							<tr>
+								<td><%= record.item.title %></td>
+								<td><%= record.item.price %></td>
+								<td><%= record.item.category.description %></td>
+							</tr>
+              <% end %>
+						</tbody>
+					</table>
+				</p>
+  
+  
+  			</div>
   </div>
 </div>
 
