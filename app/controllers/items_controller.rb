@@ -12,4 +12,9 @@ class ItemsController < ApplicationController
         end
         # render items/view_item.html.erb
     end
+    
+    def catalog
+        @items = Item.all
+        # render items/catalog.html.erb
+    end
 end

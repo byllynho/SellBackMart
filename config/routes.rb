@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   get 'home', to: 'pages#home', as: 'home'
   get 'view_item_:id', to: 'items#view_item', as: 'item'
   get 'items', to: 'users#open_page', as: 'open_page'
+  get 'catalog', to: 'items#catalog', as: 'catalog'
   
 end
