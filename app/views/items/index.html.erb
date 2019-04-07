@@ -1,33 +1,10 @@
 <main role ="main" class ="container">
 
 <h1>List of Items</h1>
-<!--
-<table class="table table-sm">
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Price</th>
-      <th scope="col">Image</th>
-      <th scope="col">Condition</th>
-      <th scope="col">Inactive</th>
-      <th scope="col">Description</th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-         <td><%= item.title %></td>
-         <td><%= item.price %></td>
-         <td><%= item.avatar %></td>
-         <td><%= item.condition %></td>
-         <td><%= item.inactive %></td>
-         <td><%= item.description %></td>
-         <td><%= link_to 'Show', item_path(item) %></td>
-      </tr>
-    <% end %>
-  </tbody>
--->
+<p>
+  <%= link_to 'Post new item', post_new_item_path %>
+</p>
+
   <div class="card-deck">
     <% @items.each do |item| %>
       <div class="card">
@@ -41,6 +18,7 @@
        </div>
        <div class="card-footer">
           <small class="text-muted"><%= link_to 'Show', item_path(item) %></small>
+          <small class="text-muted"><%= link_to 'Edit', edit_item_path(item) %></small>
        </div>
       </div>
     <% end %>

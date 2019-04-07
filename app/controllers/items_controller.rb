@@ -23,4 +23,20 @@ class ItemsController < ApplicationController
             render :new
         end
     end
+
+    def edit
+        @item = Item.find(params[:id])
+        # render 'items/edit.html.erb'
+    end
+  
+    def update
+        @item = Item.find(params[:id])
+        if @item.update(params.require(:item).permit(:avatar, :title, :price, :condition, :category_id, :description, :inactive))
+          redirect_to item_url(@item), notice:'Item record was successfully updated'
+        else
+          flash.now[:alert] = 'Error! Unable to update item record'
+          render :edit
+        end
+    end
+        
 end
