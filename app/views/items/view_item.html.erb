@@ -3,7 +3,7 @@
 <h1> <%= @item.title%> </h1>
 
 <% if %>
-<% @item.image != nil %>
-<p> <%= @item.image%> </p>
+<% @item.photo != nil %>
+<%= image_tag(@item.photo.url,size: '300x300') %>
 <% end %>
 </main>
