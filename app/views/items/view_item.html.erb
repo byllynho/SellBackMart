@@ -1,4 +1,5 @@
 <main role="main">
+<%@seller = User.find(@item.user_id)%>
 <h1> <%= @item.title%> </h1>
 <div class='flex-container' style='display: flex'>
    
@@ -18,6 +19,7 @@
         </div>
     <% end %> 
 </div>
+<p> <strong>Sold by</strong> - <%= link_to @seller.name, user_url(@seller)%>
 <p> <strong>Price</strong> - $<%=@item.price%>
 <br> <strong> Category</strong> - <%=@item.category_id%>
 <br> <strong>Condition</strong> - <%=@item.condition%>

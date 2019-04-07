@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'items', to: 'users#open_page', as: 'open_page'
   get 'catalog', to: 'items#catalog', as: 'catalog'
   get 'filter', to: 'items#filter', as: 'filter'
+  get 'users/:id', to: 'users#show', as: 'user'
 end
