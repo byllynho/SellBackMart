@@ -34,8 +34,8 @@ class User < ApplicationRecord
         inverse_of: :user,
         dependent: :destroy
     
-    has_many :transactions, 
-        class_name: 'Transactions', 
+    has_many :deals, 
+        class_name: 'Transaction', 
         foreign_key: 'user_id', 
         inverse_of: :buyer
         #dependent: :destroy

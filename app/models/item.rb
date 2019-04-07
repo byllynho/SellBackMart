@@ -35,17 +35,22 @@ class Item < ApplicationRecord
     has_attached_file :avatar,  
       styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#>"}, default_url: 'textbooks.png'
       validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-      
-
-    has_one :transactions, 
-        class_name: 'Transactions', 
+       
+    has_one :settlement, 
+        class_name: 'Transaction', 
         foreign_key: 'item_id', 
         inverse_of: :transactions
         # dependent: :destroy
 
-    belongs_to :user, 
+    belongs_to :seller, 
         class_name: 'User', 
         foreign_key: 'user_id', 
         inverse_of: :items,
-        optional: true
+        optional: false
+
+    belongs_to :category, 
+        class_name: 'Category', 
+        foreign_key: 'category_id', 
+        inverse_of: :products
+
 end
