@@ -25,16 +25,21 @@
 #
 
 class Item < ApplicationRecord
-    has_attached_file :avatar, 
-      :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-      :url => "/system/:attachment/:id/:style/:filename",   
+    validates :title, presence:true
+    validates :price, presence:true
+    validates :condition, presence:true, numericality: { less_than_or_equal_to: 10, 
+      message: "Entered value should be between 0 and 10" }
+    validates :category_id, presence:true
+    validates :description, presence: true
+
+    has_attached_file :avatar,  
       styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#>"}
     validates_attachment_content_type :avatar, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
     has_one :transactions, 
         class_name: 'Transactions', 
         foreign_key: 'item_id', 
-        inverse_of: :item,
+        inverse_of: :items,
         dependent: :destroy
 
     belongs_to :user, 

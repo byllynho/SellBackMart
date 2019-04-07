@@ -16,12 +16,13 @@ user1.items.build(title:'Machine Learning by Mitchell',price:'$100',image:'machi
     description:'A new textbook in perfect condition')
 =end
 
-Item.create!(title:'Apple Macbook',price:300.00,image:'mac.png',condition:2,inactive:false,
-    description:'Its just 2 year old laptop. Good condition and latest upgraded OS')
-Item.create!(title:'Iphone X',price:200.25,image:'iphone.png',condition:2,inactive:false,
-    description:'Its just 2 year old phone. Good condition and latest upgraded OS')
-Item.create!(title:'Distributed Computing Textbook',price:78.25,image:'tb.png',condition:3,inactive:false,
-    description:'Almost new textbook for Distributed computing course')
-            
-
+user_1 = User.new(name: "Admin Istrator", email: "admin@memphis.edu", major: "Computer Science", 
+    department: "Computer Science",password: "123456" )
+user_1.items.build(avatar:'',title:'Apple Macbook',price:300.00,condition:2,category_id:2,description:'Its just 2 year old laptop. Good condition and latest upgraded OS',
+    inactive:false)
+user_1.items.build(title:'Iphone X',price:200.25,image:'iphone.png',condition:2,inactive:false,
+    description:'Its just 2 year old phone. Good condition and latest upgraded OS',category_id:1)
+user_1.items.build(title:'Distributed Computing Textbook',price:78.25,image:'tb.png',condition:3,inactive:false,
+    description:'Almost new textbook for Distributed computing course',category_id:3)
+user_1.save!
         

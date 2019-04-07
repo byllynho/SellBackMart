@@ -16,9 +16,9 @@
 
 class User < ApplicationRecord
     has_many :items, 
-        class_name: 'Items', 
+        class_name: 'Item', 
         foreign_key: 'user_id', 
-        inverse_of: :seller,
+        inverse_of: :user,
         dependent: :destroy
     
     has_many :transactions, 
