@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_041117) do
+ActiveRecord::Schema.define(version: 2019_04_07_185845) do
+
+  create_table "buyer_comments", force: :cascade do |t|
+    t.text "comment_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "item_id"
+    t.index ["item_id"], name: "index_buyer_comments_on_item_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "description", null: false
@@ -35,6 +43,8 @@ ActiveRecord::Schema.define(version: 2019_04_07_041117) do
     t.string "photo_content_type"
     t.bigint "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer "buyer_comment_id"
+    t.index ["buyer_comment_id"], name: "index_items_on_buyer_comment_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -48,6 +58,14 @@ ActiveRecord::Schema.define(version: 2019_04_07_041117) do
     t.datetime "updated_at", null: false
     t.index ["recipient_id"], name: "index_messages_on_recipient_id"
     t.index ["sender_id"], name: "index_messages_on_sender_id"
+  end
+
+  create_table "seller_responses", force: :cascade do |t|
+    t.text "response_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "buyer_comment_id"
+    t.index ["buyer_comment_id"], name: "index_seller_responses_on_buyer_comment_id"
   end
 
   create_table "transactions", force: :cascade do |t|

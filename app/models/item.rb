@@ -19,13 +19,15 @@
 #  title              :string           not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
+#  buyer_comment_id   :integer
 #  category_id        :integer
 #  user_id            :integer
 #
 # Indexes
 #
-#  index_items_on_category_id  (category_id)
-#  index_items_on_user_id      (user_id)
+#  index_items_on_buyer_comment_id  (buyer_comment_id)
+#  index_items_on_category_id       (category_id)
+#  index_items_on_user_id           (user_id)
 #
 
 class Item < ApplicationRecord
@@ -34,6 +36,12 @@ class Item < ApplicationRecord
     has_one :transactions, 
         class_name: 'Transaction', 
         foreign_key: 'item_id', 
+        inverse_of: :item,
+        dependent: :destroy
+
+    has_many :comments,
+        class_name: 'BuyerComment',
+        foreign_key: 'item_id',
         inverse_of: :item,
         dependent: :destroy
 
