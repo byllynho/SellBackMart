@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+    layout 'standart'
+
     def index
         @items = Item.all
         # render 'items/index.html.erb'

@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   put 'items/:id', to:'items#update'
   
   delete 'items/:id', to:'items#destroy'
+  get 'open_page', to:'users#open_page', as:'open_page'
 end
