@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
     def update
         @item = Item.find(params[:id])
         if @item.update(params.require(:item).permit(:avatar, :title, :price, :condition, :category_id, :description, :inactive))
-          redirect_to item_url(@item), notice:'Item record was successfully updated'
+          redirect_to items_url(@item), notice:'Item record was successfully updated'
         else
           flash.now[:alert] = 'Error! Unable to update item record'
           render :edit
@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
     def destroy
         @item = Item.find(params[:id])
         @item.destroy
-        redirect_to items_url,  notice: 'Item record successfully deleted'
+        redirect_to catalog_url,  notice: 'Item record successfully deleted'
     end
     
     def view_item

@@ -17,20 +17,21 @@ Rails.application.routes.draw do
 
   get 'items/new', to:'items#new', as:'post_new_item'
 
-  get 'items/:id/edit', to:'items#edit', as:'edit_item'
+  get 'items/view_item_:id/edit', to:'items#edit', as:'edit_item'
 
-  patch 'items/:id', to:'items#update'
-  put 'items/:id', to:'items#update'
+  patch 'items/view_item_:id', to:'items#update'
+  put 'items/view_item_:id', to:'items#update'
 
-  get 'view_item_:id', to: 'items#view_item', as: 'item'
+  #get 'items/:id', to: 'items#show', as: 'show_item'
+
+  get 'items/view_item_:id', to: 'items#view_item', as: 'item'
   get 'catalog', to: 'items#catalog', as: 'catalog'
   get 'filter', to: 'items#filter', as: 'filter'
   
-  delete 'items/:id', to:'items#destroy'
+  delete 'items/view_item_:id', to:'items#destroy'
   get 'open_page', to:'users#open_page', as:'open_page'
   get 'users/my_profile', to: 'users#my_profile', as: 'my_profile'
   get 'users/:id', to: 'users#show', as: 'user'
   get 'users', to: 'users#index', as: 'users'
-  
-  
+
 end
