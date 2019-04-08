@@ -31,7 +31,7 @@
             <% if (controller_name == "registrations" && controller.action_name == "new") || (controller_name == "sessions" && controller.action_name == "new") %>
               <li><%= link_to "Home", root_path() %></li>
             <% else %>
-              <li><a href="#body" class="scrollto">Catalog</a></li>
+              <li><%= link_to "Catalog", catalog_path %></li>
               <li><a href="#body" class="scrollto">Example</a></li>
               <li><%= link_to "Users Profile", users_path %></a></li>
               <li></li>

@@ -1,0 +1,28 @@
+<main role="main">
+<%@seller = User.find(@item.user_id)%>
+<h1> <%= @item.title%> </h1>
+<div class='flex-container' style='display: flex'>
+   
+    <% if @item.photo_file_name != nil%>
+        <div class='big photo' style='padding-bottom: 20px'>
+            <%= image_tag(@item.photo.url,size: '300x300') %>
+        </div>
+    <% end %>
+    <% if %>
+        <% !current_user.items.include?(@item) %>
+        <div class="control-group" style='padding-left: 100px'>
+                
+                <div class="controls" style="text-align: center">
+                    <button id="message_seller" name="message_seller" style="width: 200px;" class="btn btn-primary">Message Seller</button>
+                    <br><br><button id="post_comment" name="post_comment" style="width: 200px;" class="btn btn-primary">Post Comment</button>
+                </div>
+        </div>
+    <% end %> 
+</div>
+<p> <strong>Sold by</strong> - <%= link_to @seller.name, user_url(@seller)%>
+<p> <strong>Price</strong> - $<%=@item.price%>
+<br> <strong> Category</strong> - <%=@item.category_id%>
+<br> <strong>Condition</strong> - <%=@item.condition%>
+<br> <strong>Description</strong> - <%=@item.description%> </p>
+
+</main>

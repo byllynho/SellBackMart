@@ -10,7 +10,15 @@
 #  condition           :integer          default(0), not null
 #  description         :text             not null
 #  image               :string
+#  image_content_type  :string
+#  image_file_name     :string
+#  image_file_size     :integer
+#  image_updated_at    :datetime
 #  inactive            :boolean          default(FALSE)
+#  photo_content_type  :string
+#  photo_file_name     :string
+#  photo_file_size     :integer
+#  photo_updated_at    :datetime
 #  price               :float            not null
 #  title               :string           not null
 #  created_at          :datetime         not null
