@@ -16,6 +16,32 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+body {
+    padding-top: 5rem;
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+div.field {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+div.actions {
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+label, input {
+  display:block;
+}
+
+div.invalid-feedback {
+  display:block;
+}
 @import 'animate';
 @import 'font-awesome';
 @import 'magnific-popup';

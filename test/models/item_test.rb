@@ -2,6 +2,53 @@
 #
 # Table name: items
 #
+#  id                  :integer          not null, primary key
+#  avatar_content_type :string
+#  avatar_file_name    :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  condition           :integer          default(0), not null
+#  description         :text             not null
+#  image               :string
+#  image_content_type  :string
+#  image_file_name     :string
+#  image_file_size     :integer
+#  image_updated_at    :datetime
+#  inactive            :boolean          default(FALSE)
+#  photo_content_type  :string
+#  photo_file_name     :string
+#  photo_file_size     :integer
+#  photo_updated_at    :datetime
+#  price               :float            not null
+#  title               :string           not null
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  category_id         :integer
+#  user_id             :integer
+#
+# Indexes
+#
+#  index_items_on_category_id  (category_id)
+#  index_items_on_user_id      (user_id)
+#
+
+<<<<<<< HEAD
+#  id                  :integer          not null, primary key
+#  avatar_content_type :string
+#  avatar_file_name    :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  condition           :integer          default(0), not null
+#  description         :text             not null
+#  image               :string
+#  inactive            :boolean          default(FALSE)
+#  price               :float            not null
+#  title               :string           not null
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  category_id         :integer
+#  user_id             :integer
+=======
 #  id                 :integer          not null, primary key
 #  condition          :integer          default(0), not null
 #  description        :text             not null
@@ -21,6 +68,7 @@
 #  updated_at         :datetime         not null
 #  category_id        :integer
 #  user_id            :integer
+>>>>>>> 26aca180dd8e7594aa76c132d1e1b480255702a0
 #
 # Indexes
 #
