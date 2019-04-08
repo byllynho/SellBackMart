@@ -1,4 +1,4 @@
-<div class="col-md-12 row">
+<div class="col-md-12 row" style="height: 300px">
     <div class="col-md-3">
         <div>
             <h2> Items for Sale </h2>
@@ -9,27 +9,26 @@
             <%= form_tag filter_url, method: :get %>
             <p>
                 Categories <br>
-                &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '1' %>Textbooks <br>
-                &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '2' %>Electronics <br>
-                &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '3' %> School Supplies
+                <% Category.all.each do |category| %>
+                &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', category.id %> <%= category.description %> <br>
+                <% end %>
             </p>
             <%= submit_tag 'Submit' %>
         </div>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9" style="height: 600px; overflow-y: scroll !important">
         <% @items.each do |item| %>
-            <% user=User.find(item.user_id) %>
-            <div class='catalog_items', style='border-style: ridge; display: inline-block; border-radius: 5px; margin-right: 1em; margin-left: 1em; margin-bottom: 1em; padding: 1em'>
-                <div style='border-style: ridge; display: inline-block'><%=link_to image_tag(item.photo.url, size: '175x175'), item_path(item)%></div>
-                <div style='border-style: ridge; margin-top: 1em'>
+            <div class='catalog_items', style='border: 1px ridge #6eadff; display: inline-block; border-radius: 5px; margin-right: .5em; margin-left: .5em; margin-bottom: .5em; padding: 1em'>
+                <div style='border: 1px ridge #6eadff; display: inline-block'><%=link_to image_tag(item.photo.url, size: '175x175'), item_path(item)%></div>
+                <div style='border: 1px ridge #6eadff; margin-top: 1em'>
                     <%= link_to item.title, item_path(item) %><br>
-                    $<%= item.price %><br>
-                    Category <%= item.category_id%> <br>
+                    <%= number_to_currency(item.price) %><br>
                     Posted: <%= item.created_at.strftime("%b %d, %Y") %><br>
-                    Sold by <%= link_to user.name, user_path(user) %><br>
+                    Seller: <%= link_to item.seller.name, user_path(item.seller) %><br>
                     
                 </div>
             </div>
+            
         <% end %>
     </div>
 </div>    
