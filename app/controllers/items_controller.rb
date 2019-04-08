@@ -12,8 +12,8 @@ class ItemsController < ApplicationController
     end
 
     def create
-        @item = Item.new(params.require(:item).permit(:avatar,:title, :price, :condition, :category_id, :description, :inactive))
-        if @item.save
+        @item = Item.new(params.require(:item).permit(:avatar, :title, :price, :condition, :category_id, :description, :user_id))
+        if @item.save!
             redirect_to item_url(@item), notice: 'Your item has been successfully posted'
         else
             flash.now[:alert] = 'Error! Unable to post new item'
@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
     def update
         @item = Item.find(params[:id])
         if @item.update(params.require(:item).permit(:avatar, :title, :price, :condition, :category_id, :description, :inactive))
-          redirect_to items_url(@item), notice:'Item record was successfully updated'
+          redirect_to item_url(@item), notice:'Item record was successfully updated'
         else
           flash.now[:alert] = 'Error! Unable to update item record'
           render :edit

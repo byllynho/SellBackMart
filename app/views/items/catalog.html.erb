@@ -1,16 +1,25 @@
-<h2> Items for Sale </h2>
+
+<div class="col-md-12 row">
+    <div class="col-md-6">
+        <h2> Items for Sale </h2>
+    </div>
+    <div class="col-md-6" style="text-align: right">
+        <%= link_to 'Post New Item',post_new_item_path() %>
+    </div>
+</div>
+
+
 
 <div class='filters', style='border-style: ridge; border-radius: 5px; display: inline-block; float: left; padding: 1em; margin-right: 1em'>
     <p><strong>Search Filters</strong></p>
 <%= form_tag filter_url, method: :get %>
     <p>
         Categories <br>
-        &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '1' %>Textbooks <br>
-        &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '2' %>Electronics <br>
+        &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '1' %>Electronics <br>
+        &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '2' %>Textbooks <br>
         &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', '3' %> School Supplies
     </p>
     <%= submit_tag 'Submit' %>
-    <p><%= link_to 'Post New Item',post_new_item_path() %>
 </div>
 
 
