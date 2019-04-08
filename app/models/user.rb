@@ -37,7 +37,7 @@ class User < ApplicationRecord
     has_many :deals, 
         class_name: 'Transaction', 
         foreign_key: 'user_id', 
-        inverse_of: :item,
+        inverse_of: :buyer,
         dependent: :destroy
 
     has_many :sent_messages, :class_name => 'Message', :foreign_key => 'sender_id'
