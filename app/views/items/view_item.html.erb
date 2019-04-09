@@ -28,7 +28,7 @@
 
 <p> <strong>Sold by</strong> - <%= link_to @seller.name, user_url(@seller)%>
 <p> <strong>Price</strong> - $<%=@item.price%>
-<br> <strong> Category</strong> - <%=@item.category_id%>
+<br> <strong> Category</strong> - <%=@item.category.description%>
 <br> <strong>Condition</strong> - <%=@item.condition%>
 <br> <strong>Description</strong> - <%=@item.description%> </p>
  <a href="#" data-toggle="modal" data-target="#commentModal" class="btn btn-primary">Post Comment</a>

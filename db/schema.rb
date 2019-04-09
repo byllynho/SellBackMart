@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 2019_04_07_185845) do
     t.string "photo_content_type"
     t.integer "photo_file_size"
     t.datetime "photo_updated_at"
-    t.integer "buyer_comment_id"
-    t.index ["buyer_comment_id"], name: "index_items_on_buyer_comment_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end

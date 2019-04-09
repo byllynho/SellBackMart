@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def open_page
-
+    redirect_to catalog_url
   end
 
   def show

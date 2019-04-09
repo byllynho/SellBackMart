@@ -28,9 +28,8 @@
 #
 # Indexes
 #
-#  index_items_on_buyer_comment_id  (buyer_comment_id)
-#  index_items_on_category_id       (category_id)
-#  index_items_on_user_id           (user_id)
+#  index_items_on_category_id  (category_id)
+#  index_items_on_user_id      (user_id)
 #
 
 class Item < ApplicationRecord
