@@ -1,0 +1,30 @@
+<main role ="main" class ="container">
+
+<h1>List of Items</h1>
+<p>
+  <%= link_to 'Post new item', post_new_item_path %>
+</p>
+
+  <div class="card-deck">
+    <% @items.each do |item| %>
+      <div class="card">
+       <%= image_tag(item.avatar.url) %>
+       <div class="card-body">
+          <h5 class="card-title">Title:<%= item.title %></h5>
+          <p class="card-text">Price:<%= item.price %></p>
+          <p class="card-text">Condition:<%= item.condition %></p>
+          <p class="card-text">Description:<%= item.description %></p>
+          <p class="card-text">Inactive:<%= item.inactive %></p>
+       </div>
+       <div class="card-footer">
+          <small class="text-muted"><%= link_to 'Show', item_path(item) %></small>
+          <small class="text-muted"><%= link_to 'Edit', edit_item_path(item) %></small>
+          <small class="text-muted"><%= link_to 'Delete', item_path(item), method: :delete %></small>
+       </div>
+      </div>
+    <% end %>
+  </div>
+
+</table>
+
+</main><!-- /.container -->

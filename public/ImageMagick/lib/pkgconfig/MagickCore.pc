@@ -1,0 +1,14 @@
+prefix=/opt/ImageMagick
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/ImageMagick-6
+includearchdir=/opt/ImageMagick/include/ImageMagick-6
+libname=MagickCore-6.Q16
+moduledir=${exec_prefix}/lib/ImageMagick-6.9.1/modules-Q16
+
+Name: MagickCore
+Description: MagickCore - C API for ImageMagick (ABI Q16)
+Version: 6.9.1
+Libs: -L${libdir} -l${libname}
+Libs.private: -L${libdir} -l${libname} -llcms -ltiff -ljpeg -lpng15 -lfftw3 -lwebp -L/usr/local/Cellar/xz/5.2.1/lib -llzma -lbz2 -lxml2 -lz -lm -Wl,-framework,OpenCL -lm -lm
+Cflags: -I${includearchdir} -I${includedir} -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16
