@@ -12,7 +12,8 @@
                             <div class="control-group">
                                 <label class="control-label" for="userid">Comment:</label>
                                 <div class="controls">
-                                <%=hidden_field_tag 'id[]', @item.id%>
+                                <%=hidden_field_tag 'item_id[]', @item.id%>
+                                <%=hidden_field_tag 'user_id[]', current_user.id%>
                                 <%=text_field_tag(:comment_text, value = nil, options = {}) %>
                                     <%# <%= check_box_tag 'id[]', '1',required: "required" %>
                                 </div>

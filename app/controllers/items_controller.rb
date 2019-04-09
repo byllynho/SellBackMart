@@ -64,8 +64,8 @@ class ItemsController < ApplicationController
     end
 
     def comment
-        @item = Item.find(params[:id])
-        BuyerComment.create!(item_id: params[:id][0].to_i, comment_text: params[:comment_text])
+        @item = Item.find(params[:item_id])
+        BuyerComment.create!(item_id: params[:item_id][0].to_i, comment_text: params[:comment_text], user_id: params[:user_id][0].to_i)
         redirect_to item_path(@item)
     end
 

@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_185845) do
+ActiveRecord::Schema.define(version: 2019_04_09_234835) do
 
   create_table "buyer_comments", force: :cascade do |t|
     t.text "comment_text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "item_id"
+    t.integer "user_id"
     t.index ["item_id"], name: "index_buyer_comments_on_item_id"
+    t.index ["user_id"], name: "index_buyer_comments_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
