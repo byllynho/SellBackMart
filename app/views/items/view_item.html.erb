@@ -1,4 +1,4 @@
-<main role="main">
+<main role="main" style="height: 700px; overflow-y: scroll !important">
 <%@seller = User.find(@item.user_id)%>
 <h1> <%= @item.title%> </h1>
 <div class='flex-container' style='display: flex'>
@@ -25,12 +25,19 @@
     <p><%= link_to 'Edit',edit_item_path() %></p>
     <p><%= link_to 'Delete',item_path(@item), method: :delete %></p><br>
 <% end %>
-
-<p> <strong>Sold by</strong> - <%= link_to @seller.name, user_url(@seller)%>
-<p> <strong>Price</strong> - $<%=@item.price%>
-<br> <strong> Category</strong> - <%=@item.category.description%>
-<br> <strong>Condition</strong> - <%=@item.condition%>
-<br> <strong>Description</strong> - <%=@item.description%> </p>
- <a href="#" data-toggle="modal" data-target="#commentModal" class="btn btn-primary">Post Comment</a>
+<div style="float: left"class="col-md-5">
+    <p> <strong>Sold by</strong> - <%= link_to @seller.name, user_url(@seller)%>
+    <p> <strong>Price</strong> - <%=number_to_currency(@item.price)%>
+    <br> <strong> Category</strong> - <%=@item.category.description%>
+    <br> <strong>Condition</strong> - <%=@item.condition%>
+    <br> <strong>Description</strong> - <%=@item.description%> </p>
+    <a href="#" data-toggle="modal" data-target="#commentModal" class="btn btn-primary">Post Comment</a>
 <%= render 'modal_comment' %>
+</div>
+<div class="col-md-11" >
+    <strong>Comments</strong> <br>
+    <% @item.comments.each do |comment| %>
+    <%= comment.comment_text %> <br>
+    <% end %>
+</div>
 </main>
