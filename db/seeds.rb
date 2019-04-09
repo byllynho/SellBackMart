@@ -27,6 +27,7 @@ user_4 = User.create!(name: "Andrew", email: "andrew@memphis.edu", major: "Compu
 cat_1 = Category.create!(description:"Electronics")
 cat_2 = Category.create!(description:"Textbooks")
 cat_3 = Category.create!(description:"School Supplies")
+cat_4 = Category.create!(description:"Test")
 
 
 item_1 = user_1.items.build(description: '11111', price: 5, title:'Apple watch', condition: 'good')
