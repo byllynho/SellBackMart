@@ -4,7 +4,7 @@
             <h2> Items for Sale </h2>
         </div>
 
-        <div class='filters', style='border-style: ridge; border-radius: 5px; display: inline-block; float: left; padding: 1em; margin-right: 1em'>
+        <div class='filters', style='border-style: ridge; border-radius: 5px; display: inline-block; float: left; padding: 1em; margin-right: 1em; margin-bottom: 1em'>
             <p><strong>Search Filters</strong></p>
             <%= form_tag filter_url, method: :get %>
             <p>
@@ -15,7 +15,11 @@
             </p>
             <%= submit_tag 'Submit' %>
         </div>
+        <div class="col-md-8" style="text-align: right; float: left">
+        <%= link_to 'Post New Item',post_new_item_path(), class: 'btn btn-primary' %>
     </div>
+    </div>
+   
     
     <div class="col-md-9" style="height: 600px; overflow-y: scroll !important">
         <% @items.each do |item| %>
