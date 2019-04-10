@@ -33,5 +33,6 @@ Rails.application.routes.draw do
   get 'users/my_profile', to: 'users#my_profile', as: 'my_profile'
   get 'users/:id', to: 'users#show', as: 'user'
   get 'users', to: 'users#index', as: 'users'
+  get '*path', to: 'pages#bad_url'
 
 end
