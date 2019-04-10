@@ -23,8 +23,8 @@
 
 <% if %>
     <% current_user.items.include?(@item) %>
-    <p><%= link_to 'Edit',edit_item_path() %></p>
-    <p><%= link_to 'Delete',item_path(@item), method: :delete %></p><br>
+    <p><%= link_to 'Edit',edit_item_path(), class: 'btn btn-primary', style: 'width: 150px' %></p>
+    <p><%= link_to 'Delete',item_path(@item), class: 'btn btn-primary', method: :delete, style: 'width: 150px' %></p><br>
 <% end %>
 <div style="float: left" class="col-md-5">
     <p> <strong>Sold by</strong> - <%= link_to @seller.name, user_url(@seller)%>
@@ -35,7 +35,7 @@
     
 </div>
 <div class="col-md-6" style="display: inline-block">
-   <p style='margin: .5em; text-decoration: underline'> <strong>Comments</strong> </p>
+   <p style='margin-bottom: .5em; text-decoration: underline'> <strong>Comments</strong> </p>
     <% @item.comments.each do |comment| %>
     <%= link_to comment.buyer.name, user_path(comment.buyer)%>: 
     <%= comment.comment_text %> <br><br>
