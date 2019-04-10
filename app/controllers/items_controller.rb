@@ -70,4 +70,10 @@ class ItemsController < ApplicationController
         redirect_to item_path(@item)
     end
 
+    def respond
+        @item = Item.find(params[:item_id])
+        SellerResponse.create!(buyer_comment_id: params[:buyer_comment_id][0].to_i, response_text: params[:response_text])
+        redirect_to item_path(@item)
+    end
+
 end
