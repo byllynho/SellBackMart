@@ -14,7 +14,8 @@
                 
                 <div class="controls" style="text-align: center">
                     <button id="message_seller" name="message_seller" style="width: 200px;" class="btn btn-primary">Message Seller</button>
-                    <br><br><a><button id="post_comment" name="post_comment" style="width: 200px;" class="btn btn-primary">Post Comment</button>
+                    <br><br><a href="#" data-toggle="modal" data-target="#commentModal" class="btn btn-primary" style="width: 200px;">Post Comment</a>
+                    <%= render 'modal_comment' %>
                 </div>
         </div>
     <% end %> 
@@ -25,19 +26,19 @@
     <p><%= link_to 'Edit',edit_item_path() %></p>
     <p><%= link_to 'Delete',item_path(@item), method: :delete %></p><br>
 <% end %>
-<div style="float: left"class="col-md-5">
+<div style="float: left" class="col-md-5">
     <p> <strong>Sold by</strong> - <%= link_to @seller.name, user_url(@seller)%>
-    <p> <strong>Price</strong> - <%=number_to_currency(@item.price)%>
+    <br> <strong>Price</strong> - <%=number_to_currency(@item.price)%>
     <br> <strong> Category</strong> - <%=@item.category.description%>
     <br> <strong>Condition</strong> - <%=@item.condition%>
     <br> <strong>Description</strong> - <%=@item.description%> </p>
-    <a href="#" data-toggle="modal" data-target="#commentModal" class="btn btn-primary">Post Comment</a>
-<%= render 'modal_comment' %>
+    
 </div>
-<div class="col-md-11" >
-    <strong>Comments</strong> <br>
+<div class="col-md-6" style="display: inline-block">
+   <p style='margin: .5em; text-decoration: underline'> <strong>Comments</strong> </p>
     <% @item.comments.each do |comment| %>
-    <%= comment.comment_text %> <br>
+    <%= link_to comment.buyer.name, user_path(comment.buyer)%>: 
+    <%= comment.comment_text %> <br><br>
     <% end %>
 </div>
 </main>
