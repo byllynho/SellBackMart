@@ -16,6 +16,12 @@ class UsersController < ApplicationController
   def my_profile
     #need change when merge with log-in"
     @user = current_user
+    @deals = []
+    @user.items.each do |record| 
+      if record.settlement
+        @deals.push(record)
+      end
+    end
   end
 
 end
