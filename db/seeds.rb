@@ -72,8 +72,8 @@ thomas = User.create!(name: "Thomas Edison", email: "thomas@memphis.edu", passwo
 
 
     lightbulb = thomas.items.build(description: 'With this brand new invention, you can stay up as late as you want to partying or working on homework!', price: 15, title:'Electric Lightbulb', condition: 0)
-    lightbulb.update(avatar_file_name: 'lightbulb')
-    elec << lightbulb
+    lightbulb.update(avatar_file_name: 'lightbulb.jpg')
+    elec.products << lightbulb
 
 thomas.save!
 
@@ -82,8 +82,8 @@ isaac = User.create!(name: "Isaac Newton", email: "isaac@memphis.edu", password:
     confirmation_sent_at: "Thu, 07 Apr 2019 10:54:31 UTC +00:00")
 
     apple = isaac.items.build(description: "Looking for a way to get some extra credit? Give this apple to your teacher, and you will be on their good side in no time. As an added bonus, this product also doubles as a doctor-repellant.", price: 2, title:'Apple!', condition: 1)
-    apple.update(avatar_file_name: 'apple')
-    school << apple
+    apple.update(avatar_file_name: 'apple.png')
+    school.products << apple
 
 isaac.save!
 
@@ -98,8 +98,8 @@ billy = User.create!(name: "Billy Graham", email: "billy@memphis.edu", password:
     confirmation_sent_at: "Thu, 07 Apr 2019 10:54:31 UTC +00:00")
 
    joy = billy.items.build(description: "Follow the life of young atheist C.S. Lewis (author of The Chronicles of Narnia), as he searches for joy, until unexpectedly finding it in Jesus Christ.", price: 10, title:'C.S. Lewis: Surprised by Joy', condition: 1)
-    joy.update(avatar_file_name: 'joy')
-    school << joy
+    joy.update(avatar_file_name: 'joy.jpg')
+    school.products << joy
 
 billy.save!
 
@@ -107,5 +107,5 @@ applecomment1 = BuyerComment.create!(item_id: apple.id, user_id: thomas.id, comm
 lightbulbcomment1 = BuyerComment.create!(item_id: lightbulb.id, user_id: isaac.id, comment_text: "What a bright idea. If you are tired of playing video-games by candlelight, I hereby advise you to buy Thom's latest invention.")
 joycomment1 = BuyerComment.create!(item_id: joy.id, user_id: isaac.id, comment_text: "Is the book an autobiography or historical biography?")
 joyresponse1 = SellerResponse.create!(buyer_comment_id: joycomment1.id, response_text: "Actually, it is a partial autobiography.")
-joytransaction = Transaction.create!(item_id: joy.id, user.id: isaac.id, review: "This is a great read, and the seller was kind and reliable")
+joytransaction = Transaction.create!(item_id: joy.id, user_id: isaac.id, review: "This is a great read, and the seller was kind and reliable")
 joy.update(inactive: true)

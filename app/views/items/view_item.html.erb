@@ -35,9 +35,14 @@
 </div>
 <div class="col-md-6" style="display: inline-block">
    <p style='margin-bottom: .5em; text-decoration: underline'> <strong>Comments</strong> </p>
+
     <% @item.comments.each do |comment| %>
-    <%= link_to comment.buyer.name, user_path(comment.buyer)%>: 
-    <%= comment.comment_text %> <br><br>
+        <%= link_to comment.buyer.name, user_path(comment.buyer)%>: 
+        <%= comment.comment_text %> <br>
+        <% comment.responses.each do |response| %>
+            &nbsp &nbsp &nbsp <strong><em>Seller Response:</em></strong> <%= response.response_text %>
+        <% end %>
+
     <% end %>
 </div>
 </main>
