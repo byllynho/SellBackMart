@@ -3,11 +3,10 @@
 <h1> <%= @item.title%> </h1>
 <div class='flex-container' style='display: flex'>
    
-    <% if @item.avatar_file_name != nil%>
         <div class='big photo' style='padding-bottom: 20px'>
             <%= image_tag(@item.avatar.url,size: '300x300') %>
         </div>
-    <% end %>
+        
     <% if %>
         <% !current_user.items.include?(@item) %>
         <div class="control-group" style='padding-left: 100px'>

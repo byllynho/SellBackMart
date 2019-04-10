@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   layout 'standard'
-  before_action :authenticate_user!
 
   def open_page
     redirect_to catalog_url
