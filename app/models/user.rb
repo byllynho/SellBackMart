@@ -33,6 +33,12 @@ class User < ApplicationRecord
         foreign_key: 'user_id', 
         inverse_of: :seller,
         dependent: :destroy
+
+    has_many :comments, 
+        class_name: 'BuyerComment', 
+        foreign_key: 'user_id', 
+        inverse_of: :buyer,
+        dependent: :destroy
     
     has_many :deals, 
         class_name: 'Transaction', 

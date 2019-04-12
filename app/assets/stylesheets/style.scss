@@ -13,6 +13,33 @@
   --second-blue-color: #08408a;
 }
 
+.div_filters {
+  box-shadow: 2px 7px 8px 0px #08408a; 
+  border: 1px ridge #08408a; 
+  display: inline-block; 
+  float: left; 
+  padding: 1em; 
+  margin-right: 1em; 
+  margin-bottom: 1em
+}
+
+.centralized {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.border_around_catalog {
+  box-shadow: 2px 7px 8px 0px #08408a; 
+  border: 1px ridge #08408a; 
+  height: 700px; 
+  overflow-y: scroll;
+  margin-bottom: 15px;
+}
+
 body {
   background: #fff;
   color: #444;
@@ -27,7 +54,8 @@ a {
 .general_container {
   box-shadow: 2px 7px 8px 0px var(--main-blue-color); 
   border: 0px solid; 
-  min-height: 600px
+  min-height: 600px;
+  margin-bottom: 20px;
 }
 
 a:hover,

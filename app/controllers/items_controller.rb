@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
     layout 'standard'
+    before_action :authenticate_user!
 
     def index
         @items = Item.all
@@ -62,4 +63,11 @@ class ItemsController < ApplicationController
         @items = Item.where("category_id IN (?)", params[:categories])
         render "items/catalog.html.erb"
     end
+
+    def comment
+        @item = Item.find(params[:item_id])
+        BuyerComment.create!(item_id: params[:item_id][0].to_i, comment_text: params[:comment_text], user_id: params[:user_id][0].to_i)
+        redirect_to item_path(@item)
+    end
+
 end
