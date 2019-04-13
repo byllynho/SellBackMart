@@ -5,6 +5,9 @@
    
         <div class='big photo' style='padding-bottom: 20px'>
             <%= image_tag(@item.avatar.url,size: '300x300') %>
+            <% @item.pictures.each do |photo| %>
+               <%= image_tag(photo.image.url,size: '300x300') %>
+            <% end %>
         </div>
         
     <% if %>

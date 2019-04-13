@@ -13,8 +13,13 @@ class ItemsController < ApplicationController
     end
 
     def create
-        @item = Item.new(params.require(:item).permit(:avatar, :title, :price, :condition, :category_id, :description, :user_id))
+        @item = Item.new(params.require(:item).permit(:avatar, :photo, :title, :price, :condition, :category_id, :description, :user_id))
         if @item.save!
+            if params[:images]
+                params[:images].each {|image|
+                  @item.pictures.create(image: image)
+                }
+            end
             redirect_to item_url(@item), notice: 'Your item has been successfully posted'
         else
             flash.now[:alert] = 'Error! Unable to post new item'
