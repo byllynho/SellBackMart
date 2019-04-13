@@ -71,7 +71,7 @@ class ItemsController < ApplicationController
         if @comment.save
             return redirect_to item_url(@item), notice: "Comment sucessfully posted!"
         else
-            return redirect_to item_path(@item), alert: 'Error: Unable to post comment. Please limit comment to 500 characters or less.'
+            return redirect_to item_path(@item), alert: 'Error: Unable to post comment. Please limit comment between 1 to 500 characters.'
         end
         
     end

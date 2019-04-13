@@ -16,7 +16,7 @@
 #
 
 class BuyerComment < ApplicationRecord
-    validates :comment_text, length: { maximum: 500 }
+    validates :comment_text, length: {minimum: 1, maximum: 500 }
     
     belongs_to :item, 
         class_name: 'Item', 
