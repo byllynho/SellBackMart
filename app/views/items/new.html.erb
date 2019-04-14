@@ -22,12 +22,12 @@
 
      <div class = "field">
          <%= form.label :price %>
-         <%= form.text_field :price, class:'form-control', required: 'required' %>
+         <%= form.text_field :price, type: 'number', class:'form-control', required: 'required' %>
      </div>
 
      <div class = "field">
          <%= form.label :condition %>
-         <%= form.text_field :condition, class:'form-control' %>
+         <%= form.text_field :condition, class:'form-control',type: 'number', placeholder:'Enter 0 for used and 1 for almost new' %>
      </div>
 
      <div class = "field">
