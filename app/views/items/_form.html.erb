@@ -1,0 +1,52 @@
+
+ <%= form_with model: item, local:true, html: { multipart: true } do |form| %>
+     <div class = "field">
+         <%= form.label :avatar %>
+         <%= form.file_field :avatar %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :photos %>
+         <%= file_field_tag "images[]", type: :file, multiple: true %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :title %>
+         <%= form.text_field :title, class:'form-control' %>
+         <% if item.errors.full_messages_for(:item).any? %>
+           <div class="invalid-feedback">
+              <% item.errors.full_messages_for(:item).each do |error_message| %>
+                 <%= error_message %>
+              <% end %>
+           </div>
+         <% end %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :price %>
+         <%= form.text_field :price, class:'form-control' %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :condition %>
+         <%= form.text_field :condition, class:'form-control' %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :category_id %>
+         <%= form.collection_select :category_id, Category.order(:description), :id,:description, {:prompt=>true}, {:class=>'form-control'} %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :description %>
+         <%= form.text_area :description, class:'form-control' %>
+     </div>
+     <div class = "field" style="display: none">
+         <%= form.label :user_id %>
+         <%= form.text_field :user_id, value: current_user.id, class:'form-control' %>
+     </div>
+
+     <div class = "actions">
+         <%= form.submit 'Post Item', class: 'btn btn-primary' %>
+     </div>
+ <% end %>

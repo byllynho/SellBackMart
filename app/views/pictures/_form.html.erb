@@ -1,0 +1,14 @@
+<main role ="main" class ="container">
+  <%= form_with model: item, local:true, html: { multipart: true } do |form| %>
+
+     <div class = "field">
+         <%= form.label :photos %>
+         <%= file_field_tag "images[]", type: :file, multiple: true %>
+     </div>
+
+     <div class = "actions">
+         <%= form.submit 'Post Item', class: 'btn btn-primary' %>
+     </div>
+
+  <% end %>
+</main>

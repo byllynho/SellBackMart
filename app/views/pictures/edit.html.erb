@@ -1,0 +1,19 @@
+<main role ="main" class ="container">
+
+  <h1>Edit Item </h1>
+
+  <h2>Item Pictures</h2>
+
+  <div class='big photo' style='padding-bottom: 20px'>
+      <% @item.pictures.each do |photo| %>
+        <%= image_tag(photo.image.url,size: '300x300') %>
+        <%= link_to 'Delete', item_path(photo), method: :delete %>
+      <% end %>
+  </div>
+
+  <%= render 'form', picture: @picture %>
+  
+  <p>
+    <%= link_to 'Back',item_path %>
+  </p>
+</main><!-- /.container -->
