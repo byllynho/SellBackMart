@@ -72,7 +72,11 @@ thomas = User.create!(name: "Thomas Edison", email: "thomas@memphis.edu", passwo
 
 
     lightbulb = thomas.items.build(description: 'With this brand new invention, you can stay up as late as you want to partying or working on homework!', price: 15, title:'Electric Lightbulb', condition: 0)
+<<<<<<< HEAD
     lightbulb.update(avatar: 'Photo on 4-7-19 at 10.53 PM #3')
+=======
+    lightbulb.update(avatar_file_name: 'lightbulb.jpg')
+>>>>>>> 1d4598bffb268350032e2f18db8b1ced595860b3
     elec.products << lightbulb
 
 thomas.save!
@@ -98,8 +102,8 @@ billy = User.create!(name: "Billy Graham", email: "billy@memphis.edu", password:
     confirmation_sent_at: "Thu, 07 Apr 2019 10:54:31 UTC +00:00")
 
    joy = billy.items.build(description: "Follow the life of young atheist C.S. Lewis (author of The Chronicles of Narnia), as he searches for joy, until unexpectedly finding it in Jesus Christ.", price: 10, title:'C.S. Lewis: Surprised by Joy', condition: 1)
-    joy.update(avatar_file_name: 'joy')
-    text.products << joy
+    joy.update(avatar_file_name: 'joy.jpg')
+    school.products << joy
 
 billy.save!
 

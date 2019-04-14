@@ -16,6 +16,8 @@
 #
 
 class BuyerComment < ApplicationRecord
+    validates :comment_text, length: {minimum: 1, maximum: 500 }
+    
     belongs_to :item, 
         class_name: 'Item', 
         foreign_key: 'item_id', 

@@ -66,8 +66,14 @@ class ItemsController < ApplicationController
 
     def comment
         @item = Item.find(params[:item_id])
-        BuyerComment.create!(item_id: params[:item_id][0].to_i, comment_text: params[:comment_text], user_id: params[:user_id][0].to_i)
-        redirect_to item_path(@item)
+        
+        @comment=BuyerComment.new(item_id: params[:item_id][0].to_i, comment_text: params[:comment_text], user_id: params[:user_id][0].to_i)
+        if @comment.save
+            return redirect_to item_url(@item), notice: "Comment sucessfully posted!"
+        else
+            return redirect_to item_path(@item), alert: 'Error: Unable to post comment. Please limit comment between 1 to 500 characters.'
+        end
+        
     end
 
     def respond

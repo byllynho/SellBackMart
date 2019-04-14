@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
     end
 
     def after_sign_in_path_for(resource)
-        open_page_path() #your path
+        catalog_path() #your path
     end
 
     protected
     def after_confirmation_path_for(resource_name, resource)
-        open_page_path()
+        catalog_path()
     end
 
 end
