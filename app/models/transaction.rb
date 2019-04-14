@@ -16,15 +16,15 @@
 #
 
 class Transaction < ApplicationRecord
-    belongs_to :user, 
+    belongs_to :buyer, 
         class_name: 'User', 
         foreign_key: 'user_id', 
-        inverse_of: :buyer,
+        inverse_of: :deals,
         optional: false
     
     belongs_to :item, 
-        class_name: 'Items', 
+        class_name: 'Item', 
         foreign_key: 'item_id', 
-        inverse_of: :item,
+        inverse_of: :settlement,
         optional: false
 end

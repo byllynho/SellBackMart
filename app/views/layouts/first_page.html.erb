@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+    <title>SellBackMart</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- Libraries CSS Files -->
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+    <!--==========================
+      Header
+    ============================-->
+    
+    <header id="header">
+      <div class="container">
+
+        <div id="logo" class="pull-left">
+          <h1><a href="#intro" class="scrollto">SellBack<span>Mart</span></a></h1>
+        </div>
+        
+        <nav id="nav-menu-container">
+          <ul class="nav-menu">
+            <% if controller_name == "pages" && controller.action_name == "home" %>
+              <li class="menu-active"><a href="#intro">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
+            <% elsif controller_name == "registrations" && controller.action_name == "new" %>
+              <li><%= link_to "Home", root_path() %></li>
+            <% end %>
+          </ul>
+        </nav><!-- #nav-menu-container -->
+      
+    </header>
+    <!-- #header -->
+    
+    <% if flash[:notice]%>
+      <div class="alert alert-success" role="alert">
+       <%= flash[:notice]%>
+      </div>
+    <%end%>
+
+    <% if flash[:alert]%>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:alert]%>
+      </div>
+    <% end%>
+
+    <%= yield %>
+  </body>
+</html>

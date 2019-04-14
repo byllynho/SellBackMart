@@ -1,0 +1,47 @@
+<% provide(:title,'SellBackMart - Catalog')%>
+
+<div class="col-md-12 row">
+    <div class="col-md-3">
+        <div>
+            <h2> Items for Sale </h2>
+        </div>
+
+        <div class='filters div_filters'>
+            <p><strong>Search Filters</strong></p>
+            <%= form_tag filter_url, method: :get %>
+            <p>
+                <b>Categories</b> <br>
+                <% Category.all.each do |category| %>
+                &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', category.id %>  <%= category.description %> <br>
+                <% end %>
+            </p>
+           <p style="text-align: center"> <%= submit_tag 'Submit' %> </p>
+        </div>
+        <div class="col-md-8" style="text-align: right; float: left">
+        <%= link_to 'Post New Item',post_new_item_path(), class: 'btn btn-primary' %>
+    </div>
+    </div>
+   
+    
+    <div class="col-md-9 border_around_catalog">
+        <% if !@items.blank? %>
+            <% @items.each do |item| %>
+                <div class='catalog_items', style='border: 1px solid #6eadff; display: inline-block; border-radius: 5px; margin-right: .5em; margin-left: 1.5em; margin-bottom: .5em; padding: 1em; margin-top: 1em'>
+                    <div style='border: 1px solid #6eadff; display: inline-block'><%=link_to image_tag(item.avatar.url, size: '175x175'), item_path(item)%></div>
+                    <div style='margin-top: 0.5em'>
+                        <%= link_to item.title, item_path(item) %><br>
+                        <%= number_to_currency(item.price) %><br>
+                        Posted: <%= item.created_at.strftime("%b %d, %Y") %><br>
+                        Seller: <%= link_to item.seller.name, user_path(item.seller) %><br>
+                        
+                    </div>
+                </div>
+                
+            <% end %>
+        <% else %>
+            <div>
+                <p class="centralized">There are not items to be shown using this filter!</p>
+            </div>
+        <% end %>
+    </div>
+</div>    
