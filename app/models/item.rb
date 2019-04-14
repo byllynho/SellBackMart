@@ -40,10 +40,20 @@ class Item < ApplicationRecord
     #validates :category_id, presence:true
     #validates :description, presence: true
 
+    has_many :pictures,
+      class_name: 'Picture',
+      foreign_key: 'item_id',
+      inverse_of: :item,
+      dependent: :destroy
+    
     has_attached_file :avatar,  
       styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#"}, default_url: ':style/default.png'
       validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
-       
+    
+    has_attached_file :photo,  
+      styles: { large: "600x600>", medium: "300x300>", thumb: "150x150#"}, default_url: ':style/default.png'
+      validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
     has_one :settlement, 
         class_name: 'Transaction', 
         foreign_key: 'item_id', 
