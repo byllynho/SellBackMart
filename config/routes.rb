@@ -30,6 +30,11 @@ Rails.application.routes.draw do
   
   delete 'items/view_item_:id', to:'items#destroy'
   get 'open_page', to:'users#open_page', as:'open_page'
+  get 'users/my_profile/edit', to: 'users#edit', as: 'edit_my_profile'
+
+  patch 'users/:id', to:'users#update'
+  put 'users/:id', to:'users#update'
+
   get 'users/my_profile', to: 'users#my_profile', as: 'my_profile'
   get 'users/:id', to: 'users#show', as: 'user'
   get 'users', to: 'users#index', as: 'users'
