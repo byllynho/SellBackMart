@@ -5,7 +5,7 @@
 <h1> <%= @user.name%> </h1>
     
 <div id="left">
-  <%= image_tag("1200px-Memphis_Tigers_logo.svg.png", :size => "360x300", :alt => "Memphis Tiger Logo") %>
+  <%= image_tag("1200px-Memphis_Tigers_logo.svg.png", :size => "240x200", :alt => "Memphis Tiger Logo") %>
     <div id ="button">
       <input type="button" value="Send Message">
     </div>
@@ -27,19 +27,16 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div>
+        <br>
         <p>
             <b>Name:</b> <%= @user.name %>
         </p>
-
         <p>
             <b>Department:</b> <%= @user.department %>
         </p>
-
         <p>
             <b>Major:</b> <%= @user.major %>
         </p>  
-
-
         <p>
             <b>Email:</b> <%= @user.email %>
         </p>

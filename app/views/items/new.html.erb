@@ -1,3 +1,5 @@
+<% provide(:title,'SellBackMart - New Item') %>
+
 <main role ="main" class ="container">
 
 <h1>New Item </h1>
@@ -6,6 +8,11 @@
      <div class = "field">
          <%= form.label :avatar %>
          <%= form.file_field :avatar %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :photos %>
+         <%= file_field_tag "images[]", type: :file, multiple: true %>
      </div>
 
      <div class = "field">
