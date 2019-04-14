@@ -33,11 +33,11 @@
 #
 
 class Item < ApplicationRecord
-    #validates :title, presence:true
-    #validates :price, presence:true
+    validates :title, presence:true
+    validates :price, presence:true
     #validates :condition, presence:true, numericality: { less_than_or_equal_to: 10, 
     #message: "Entered value should be between 0 and 10" }
-    #validates :category_id, presence:true
+    validates :category_id, presence:true
     #validates :description, presence: true
 
     has_many :pictures,
