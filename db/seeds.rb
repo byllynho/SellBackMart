@@ -72,11 +72,7 @@ thomas = User.create!(name: "Thomas Edison", email: "thomas@memphis.edu", passwo
 
 
     lightbulb = thomas.items.build(description: 'With this brand new invention, you can stay up as late as you want to partying or working on homework!', price: 15, title:'Electric Lightbulb', condition: 0)
-<<<<<<< HEAD
-    lightbulb.update(avatar: 'Photo on 4-7-19 at 10.53 PM #3')
-=======
     lightbulb.update(avatar_file_name: 'lightbulb.jpg')
->>>>>>> 1d4598bffb268350032e2f18db8b1ced595860b3
     elec.products << lightbulb
 
 thomas.save!
