@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get 'catalog', to: 'items#catalog', as: 'catalog'
   get 'filter', to: 'items#filter', as: 'filter'
   post 'comment', to: 'items#comment', as: 'comment'
+  post 'respond', to: 'items#respond', as: 'respond'
   
   delete 'items/view_item_:id', to:'items#destroy'
   get 'open_page', to:'users#open_page', as:'open_page'
