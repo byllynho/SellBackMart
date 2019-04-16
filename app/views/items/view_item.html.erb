@@ -12,8 +12,7 @@
             <% end %>
         </div>
         
-    <% if %>
-        <% !current_user.items.include?(@item) %>
+    <% if !current_user.items.include?(@item) %>
         <div class="control-group" style='padding-left: 100px'>
                 
                 <div class="controls" style="text-align: center">
@@ -25,8 +24,7 @@
     <% end %> 
 </div>
 
-<% if %>
-    <% current_user.items.include?(@item) %>
+<% if current_user.items.include?(@item) %>
     <p><%= link_to 'Edit',edit_item_path(), class: 'btn btn-primary', style: 'width: 150px' %></p>
     <p><%= link_to 'Delete',item_path(@item), class: 'btn btn-primary', method: :delete, style: 'width: 150px' %></p><br>
 <% end %>
@@ -42,12 +40,36 @@
    <p style='margin-bottom: .5em; text-decoration: underline'> <strong>Comments</strong> </p>
 
     <% @item.comments.each do |comment| %>
-        <%= link_to comment.buyer.name, user_path(comment.buyer)%>: 
-        <%= comment.comment_text %> <br>
-        <% comment.responses.each do |response| %>
-            &nbsp &nbsp &nbsp <strong><em>Seller Response:</em></strong> <%= response.response_text %><br>
-        <% end %>
+        
+            <%= link_to comment.buyer.name, user_path(comment.buyer)%>: 
+            <%= comment.comment_text %> <br>
+            <% comment.responses.each do |response| %>
+                &nbsp &nbsp &nbsp <strong><em>Seller Response:</em></strong> <%= response.response_text %><br>
+            <% end %>
+            <% if current_user.items.include?(@item) %>
+                <%= form_tag respond_url method: :post, id: 'form'+comment.id.to_s do %>
+                        <fieldset>
+                            <!-- Text input-->
+                                
+                            <div class="control-group" style="display: inline">
+                                <label class="control-label" for="userid"><strong>Would you like to respond?</strong></label>
+                                <div class="controls" style='display: block-inline'>
+                                <%=hidden_field_tag 'item_id[]', @item.id%>
+                                <%=hidden_field_tag 'buyer_comment_id', comment.id%>
+                                <%=text_field_tag(:response_text, value = nil, options = {}) %>
+                                    <%# <%= check_box_tag 'id[]', '1',required: "required" %>
+                                </div>
+                            </div>
 
+                            <!-- Button -->
+                            <div class="control-group" style='display: inline'>
+                                <div class="controls" style="text-align: center; display: inline">
+                                    <button id="signin" name="signin" style="display: inline; margin-bottom: 1em">Post Response</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                <% end %>
+            <% end %>
     <% end %>
 </div>
 </main>
