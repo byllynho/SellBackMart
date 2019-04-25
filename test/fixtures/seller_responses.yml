@@ -17,6 +17,12 @@
 
 one:
   response_text: MyText
+  created_at: 2019-02-13 15:31:46
+  updated_at: 2019-02-13 15:31:46
+  comment: one
 
 two:
   response_text: MyText
+  created_at: 2019-02-13 15:31:46
+  updated_at: 2019-02-13 15:31:46
+  comment: one
