@@ -109,3 +109,9 @@ joycomment1 = BuyerComment.create!(item_id: joy.id, user_id: isaac.id, comment_t
 joyresponse1 = SellerResponse.create!(buyer_comment_id: joycomment1.id, response_text: "Actually, it is a partial autobiography.")
 joytransaction = Transaction.create!(item_id: joy.id, user_id: isaac.id, review: "This is a great read, and the seller was kind and reliable")
 joy.update(inactive: true)
+
+admin = User.create!(name: "Admin Istrator", email: "admin@memphis.edu", major: "Computer Science", 
+    department: "Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
+    confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00",
+    password: "123456" )
+admin.save!

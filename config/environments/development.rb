@@ -60,8 +60,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    user_name:      "felipe.oliveira.mail@gmail.com", # add here the email used to send messages
-    password:       "39496486", #add here the password of your email
+    user_name:      "sellbackmart@gmail.com", # add here the email used to send messages
+    password:       "SBM8922898", #add here the password of your email
     domain:         "localhost:3000",
     address:       'smtp.gmail.com', # change it if not a GMAIL address
     port:          '587',

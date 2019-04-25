@@ -14,6 +14,8 @@
 #
 
 class SellerResponse < ApplicationRecord
+    validates :response_text, length: {minimum: 1, maximum: 500 }
+    
     belongs_to :comment, 
         class_name: 'BuyerComment', 
         foreign_key: 'buyer_comment_id', 

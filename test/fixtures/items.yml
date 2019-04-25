@@ -61,8 +61,19 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
+  title: My Item
+  price: 2.03
+  description: This is an item.
+  created_at: 2019-02-13 15:31:46
+  updated_at: 2019-02-13 15:31:46
+
 # column: value
 #
-two: {}
+two: 
+  title: My Item2
+  price: 10
+  description: This is the second item.
+  created_at: 2019-02-13 15:31:46
+  updated_at: 2019-02-13 15:31:46
 # column: value
