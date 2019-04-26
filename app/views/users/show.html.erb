@@ -3,6 +3,7 @@
 
 <main role="main" class="container">
 <h1> <%= @user.name%> </h1>
+<% if !@user.deleted_at%>
     
 <div id="left">
   <%= image_tag("1200px-Memphis_Tigers_logo.svg.png", :size => "240x200", :alt => "Memphis Tiger Logo") %>
@@ -72,6 +73,8 @@
     </div>
   </div>
 </div>
-
+<% else %>
+<p>Oops, the user doesn't exist anymore...</p>
+ <% end %>
     
 </main><!-- /.container -->
