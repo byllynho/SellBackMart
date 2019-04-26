@@ -1,0 +1,19 @@
+<%= form_with model: review, local: true do |form| %>
+    <%= hidden_field_tag :user_id, user_id %>
+    <%= hidden_field_tag :item_id, item_id %>
+
+     <div class = "field">
+         <%= form.label :product %>
+         <%= form.text_field :product, class:'form-control', required: 'required' %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :description %>
+         <%= form.text_area :description, class:'form-control' %>
+     </div>
+
+     <div class = "actions">
+         <%= form.submit 'Post Item', class: 'btn btn-primary' %>
+     </div>
+
+<% end %>

@@ -14,7 +14,13 @@ Rails.application.routes.draw do
   get 'items', to: 'items#index', as: 'items'
   post 'items', to: 'items#create'
 
+  get 'reviews', to: 'reviews#index', as: 'reviews'
+  post 'reviews', to: 'reviews#create'
+
   get 'items/new', to:'items#new', as:'post_new_item'
+  get 'users/:user_id/reviews/:item_id/new', to:'reviews#new', as:'post_new_review'
+
+  get 'items/view_item_:id/reviews/view_review_:id', to:'reviews#view_review', as:'review'
 
   get 'items/view_item_:id/edit', to:'items#edit', as:'edit_item'
 
@@ -41,4 +47,15 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index', as: 'users'
   get '*path', to: 'pages#bad_url'
 
+#  get 'reviews', to: 'reviews#index', as: 'reviews'
+#  post 'reviews', to: 'reviews#create'
+  
+
+#  get 'reviews/view_review_:id/edit', to:'reviews#edit', as:'edit_review'
+
+#  patch 'reviews/view_review_:id', to:'reviews#update'
+#  put 'reviews/view_review_:id', to:'reviews#update'
+
+#  get 'reviews/view_review_id', to:'reviews#view_review', as:'review'
+#  delete 'reviews/view_review_:id', to:'reviews#destroy'
 end
