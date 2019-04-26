@@ -5,6 +5,7 @@
 ***Modify the instructions below if necessary.***
 
 - `bundle install`
+- 'sudo apt-get install imagemagick' to get photo uploads to work
 - `rails db:migrate`
 - `rails db:seed`
 - `rails s -b 0.0.0.0`
