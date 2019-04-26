@@ -6,6 +6,7 @@
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
+#  deleted_at             :datetime
 #  department             :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
@@ -51,5 +52,18 @@ class User < ApplicationRecord
     validates :name,  presence: true, length: { maximum: 50 }
     validates :email, presence: true, length: { maximum: 255 }
 
-    
+    # instead of deleting, indicate the user requested a delete & timestamp it  
+    def soft_delete  
+        update_attribute(:deleted_at, Time.current)  
+    end  
+  
+    # ensure user account is active  
+    def active_for_authentication?  
+        super && !deleted_at  
+    end  
+  
+    # provide a custom message for a deleted account   
+    def inactive_message   
+  	    !deleted_at ? super : :deleted_account  
+    end  
 end
