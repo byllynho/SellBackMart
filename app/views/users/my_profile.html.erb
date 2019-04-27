@@ -63,7 +63,7 @@
               </td>
               <td><%= review.description %></td>
               <td>
-                <%= review.owner %>
+                <%=link_to review.owner, user_url(review.reviewer) %>
               </td>
             </tr>
           <% end %>
