@@ -8,6 +8,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @deals = []
+    @user.items.each do |record| 
+      if record.settlement
+        @deals.push(record)
+      end
+    end
   end
   
   def index
@@ -40,6 +46,18 @@ class UsersController < ApplicationController
     end
   end
 
+  # def cancel_my_account
+  #   @user = User.find(current_user.id)
+  #   if @user.destroy_with_password(params[:user][:current_password])
+         
+  #   else
+  #     flash[:alert] = 'Error! Unable to cancel your account!'
+  #     render :edit 
+      
+  #   end
+  # end
+
+ 
   
 
 end
