@@ -6,6 +6,7 @@
 #  description :string
 #  owner       :string
 #  product     :string
+#  reviewer    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  item_id     :integer

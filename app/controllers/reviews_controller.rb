@@ -10,7 +10,7 @@ class ReviewsController < ApplicationController
     def new
         begin
             @user = User.find(params[:user_id])
-            @item = Item.find(params[:item_id])
+            #@item = Item.find(params[:item_id])
           rescue 
             redirect_to review_url, alert: 'Error:User not found'
         end
@@ -21,15 +21,15 @@ class ReviewsController < ApplicationController
     def create
         begin
             @user = User.find(params[:user_id])
-            @item = Item.find(params[:item_id])
+            #@item = Item.find(params[:item_id])
         rescue 
             redirect_to review_url, alert: 'Error:User not found'
         end
-        @review = Review.new(params.require(:review).permit(:product, :description, :user_id, :item_id))
-        @review.update(item_id: @item.id)
+        @review = Review.new(params.require(:review).permit(:product, :description,:owner, :user_id, :item_id))
+        @review.update(owner: current_user.name, reviewer: current_user.id)
         @user.reviews << @review
         if @user.save  
-            redirect_to review_url(@item), notice: 'Your review has been successfully posted'
+            redirect_to user_url(@user), notice: 'Your review has been successfully posted'
         else
             flash.now[:alert] = 'Error! Unable to post new review'
             render :new
@@ -44,12 +44,12 @@ class ReviewsController < ApplicationController
     def update
         begin
             @review = Review.find(params[:id])
-          rescue 
+        rescue 
             redirect_to reviews_url, alert: 'Error:User not found'
         end
         @review = Review.find(params[:id])
-        if @item.update(params.require(:review).permit(:product, :owner, :description, :inactive))
-            redirect_to review_url(@review), notice:'Review was successfully updated'
+        if @review.update(params.require(:review).permit(:product,:description,:user_id))
+            redirect_to user_url(@review.user_id), notice:'Review was successfully updated'
         else
           flash.now[:alert] = 'Error! Unable to update review'
           render :edit
@@ -60,11 +60,11 @@ class ReviewsController < ApplicationController
         begin
             @review = Review.find(params[:id])
           rescue 
-            redirect_to reviews_url, alert: 'Error:User not found'
+            redirect_to user_url, alert: 'Error:Review not found'
         end
-        @review = Review.find(params[:id])
+        @user = @review.user_id
         @review.destroy
-        redirect_to catalog_url,  notice: 'Review successfully deleted'
+        redirect_to user_url(@user),  notice: 'Review successfully deleted'
     end
 
     def view_review

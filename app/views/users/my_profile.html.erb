@@ -55,6 +55,19 @@
           </tr>
         </thead>
       <tbody>
+          <% @user.reviews.each do |review|%>
+            <tr>
+              <td>
+                <% @item = Item.find(review.product)%>
+                <%= @item.title %>
+              </td>
+              <td><%= review.description %></td>
+              <td>
+                <%= review.owner %>
+              </td>
+            </tr>
+          <% end %>
+<!--
           <tr>
             <% if !@deals.empty? %>
               <% @deals.each do |record|  %>
@@ -66,6 +79,7 @@
               <td colspan="3" style="text-align: center">You have not sold any item!</td>
             <% end %>
           </tr>
+-->
       </tbody>
      </table></p>
   
