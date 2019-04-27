@@ -7,6 +7,6 @@
   <%= render 'form', user_id: @user.id, review:@review %>
 
   <p>
-    <%= link_to 'Back',catalog_path %>
+    <%= link_to 'Back',user_path(@user.id) %>
   </p>
 </main><!-- /.container -->
