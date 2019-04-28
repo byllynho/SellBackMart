@@ -60,8 +60,8 @@
               <li></li>
               <li class="menu-has-children"><a href="#"><%= current_user.name %></a>
                 <ul>
-                  <li class="dropdown-submenu"><%= link_to "My Profile", my_profile_path %></li>
-                  <li class="dropdown-submenu"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+                  <li><%= link_to "My Profile", my_profile_path %></li>
+                  <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
             <% end %>
