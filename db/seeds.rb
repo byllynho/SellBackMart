@@ -122,3 +122,11 @@ watchlist1 = Watchlist.create!(user_id: admin.id)
 watchitem1 = WatchItem.create!(title: 'apple', category: 3, watchlist_id: watchlist1.id)
 #watchlist1 << watchitem1
 admin.save!
+
+
+rain = User.create!(name: "Rain", email: "ysun3@memphis.edu", password: "123456", department: "Herff College of Engineering", 
+    major:"Electrical Engineering", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
+    confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00" )
+
+
+rain.save!
