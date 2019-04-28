@@ -45,6 +45,12 @@ class User < ApplicationRecord
         foreign_key: 'user_id', 
         inverse_of: :buyer,
         dependent: :destroy
+    
+    has_one :watchlist, 
+        class_name: 'Watchlist', 
+        foreign_key: 'user_id', 
+        inverse_of: :user,
+        dependent: :destroy
 
     has_many :sent_messages, :class_name => 'Message', :foreign_key => 'sender_id'
     has_many :received_messages, :class_name => 'Message', :foreign_key => 'recipient_id'

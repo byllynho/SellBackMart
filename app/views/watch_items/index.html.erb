@@ -1,0 +1,25 @@
+<main role ="main" class ="container">
+
+<h1>List of Watch Items</h1>
+<p>
+  <%= link_to 'Add new watch item', add_new_watch_item_path %>
+</p>
+
+  <div class="card-deck">
+    <% @watch_items.each do |item| %>
+      <div class="card">
+       <div class="card-body">
+          <h5 class="card-title">Title:<%= item.title %></h5>
+          <p class="card-text">Category:<%= item.category %></p>
+       </div>
+       <div class="card-footer">
+          <small class="text-muted"><%= link_to 'Edit', edit_watch_item_path(item) %></small>
+          <small class="text-muted"><%= link_to 'Delete', watech_item_path(item), method: :delete %></small>
+       </div>
+      </div>
+    <% end %>
+  </div>
+
+</table>
+
+</main><!-- /.container -->

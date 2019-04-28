@@ -114,4 +114,11 @@ admin = User.create!(name: "Admin Istrator", email: "admin@memphis.edu", major: 
     department: "Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00",
     password: "123456" )
+
+
+
+watchlist1 = Watchlist.create!(user_id: admin.id)
+#admin.watchlist = watchlist1
+watchitem1 = WatchItem.create!(title: 'apple', category: 3, watchlist_id: watchlist1.id)
+#watchlist1 << watchitem1
 admin.save!
