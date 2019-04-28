@@ -1,0 +1,106 @@
+<script>
+    var recipient_id = '';
+    $(document).ready(function(){
+        
+
+        $('#form_send_div').hide()
+        $(".get_messages_from").click(function(){
+            user_to_id = $(this).attr("user_to_id");
+            $('#message_recipient_id').attr('value',user_to_id)
+            
+            $('.active').attr('style', ' ')
+            $('#chat_'+user_to_id).attr('class', 'chat_list active')
+            $('#chat_'+user_to_id).attr('style', ' background-color: #6eadff')
+            $('#img_user_'+user_to_id).attr('style', ' ')
+            $('#form_send_div').show()
+        });
+
+        document.body.addEventListener('ajax:success', function(event) {
+            var detail = event.detail;
+            
+            var data = detail[0], status = detail[1], xhr = detail[2];
+            
+            $('#message_content').val('').change()
+            $(".msg_history").scrollTop($(".msg_history")[0].scrollHeight);
+            
+        });
+
+        $('#send_message').click(function() {
+            recipient_id = $('#message_recipient_id').val()
+            $('#link_to_user_'+recipient_id).click()
+            $('#message_content').html('')
+            
+        });
+
+    });
+    
+</script>
+<br>
+<div class="messaging">
+    <div class="inbox_msg">
+        <div class="inbox_people">
+            <div class="inbox_chat">
+                <% users_array = [] %> 
+                <% @users.each do |user| %>
+                    <% user_to_id = user.sender.id %> 
+                    <% user_to_name = user.sender.name %> 
+                    
+                    <% if user.sender.id == current_user.id %>
+                        <% user_to_id = user.recipient.id %> 
+                        <% user_to_name = user.recipient.name %> 
+                    <% end %>
+                    <% if !users_array.include?(user_to_id) %>
+                        <%  users_array << user_to_id %>  
+                        <% style = '' %>
+                            
+                        <% if @users_unread.include?(user_to_id) %>
+                            <%  style = 'border: 2px solid red' %>
+                        <% end %>
+                        
+                        <%= link_to get_messages_from_user_path(:user_to => user_to_id), user_to_id: user_to_id, id: "link_to_user_" + user_to_id.to_s(), class: 'get_messages_from', remote: true do %>
+                            <div class="chat_list" id="chat_<%= user_to_id %>"  >
+                                <div class="chat_people">
+                                    <div class="chat_img"> <%= image_tag("no_picture.png", :alt => "Memphis Tiger Logo", id: 'img_user_' + user_to_id.to_s(), style: style, class: 'img_rounded') %> </div>
+                                    <div class="chat_ib">
+                                        <h5> <%= user_to_name %> <span class="chat_date"><%= user.created_at.strftime("%B %d") %></span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <% end %>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+        
+        <div class="mesgs">
+            <div id="messages_ajax">
+            </div>
+            <div class="type_msg">
+                <div class="input_msg_write" id='form_send_div'>
+                    <%= form_for @message, remote: true, id: 'message_form', url: send_messages_ajax_path do |f| %>
+                        <fieldset>
+                            <div style="display:none">
+                                <%= f.text_field :sender_id, class: "form-control input-md", value: current_user.id %>
+                                <%= f.text_field :recipient_id, class: "form-control input-md", value: current_user.id %>
+                            </div>
+                            <div class="control-group">
+                                    <%= f.text_area :content, autofocus: true, autocomplete: "email", class: "form-control input-md", required: "required" %>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="send_message"></label>
+                                <div class="controls" style="text-align: center">
+                                    <button id="send_message" name="send_message" style="width: 200px" class="btn btn-primary">Send</button>
+                                </div>
+                            </div>
+                            <br>
+                        </fieldset>
+                    <% end %>
+                <br>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+</div>
