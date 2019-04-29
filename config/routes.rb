@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  get 'items', to: 'items#index', as: 'items'
+  #get 'items', to: 'items#index', as: 'items'
   post 'items', to: 'items#create'
 
   get 'items/new', to:'items#new', as:'post_new_item'

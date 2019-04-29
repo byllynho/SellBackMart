@@ -2,10 +2,10 @@ class ItemsController < ApplicationController
     layout 'standard'
     before_action :persist_last_visited_path, :authenticate_user!
 
-    def index
-        @items = Item.all
-        # render 'items/index.html.erb'
-    end
+    # def index
+    #     @items = Item.all
+    #     # render 'items/index.html.erb'
+    # end
 
     def new
         @item = Item.new
@@ -65,7 +65,7 @@ class ItemsController < ApplicationController
     end
     
     def catalog
-        @items = Item.all
+        @items = Item.all.sort_by {|item| item.category_id}
         # render items/catalog.html.erb
     end
 
