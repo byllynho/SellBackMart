@@ -32,6 +32,14 @@
                         <%= link_to item.title, item_path(item) %><br>
                         <%= number_to_currency(item.price) %><br>
                         Posted: <%= item.created_at.strftime("%b %d, %Y") %><br>
+                        <% if item.inactive == false %>
+                          <div class="card-footer", style='background-color: green; color:white; text-align:center'>
+                            Status: Available
+                          </div>
+                        <% else %>
+                          <div class="card-footer", style='background-color: red; color:white; text-align:center'>
+                            Status: Sold
+                          </div>
                         <% if !current_user.items.include?(item) %>
                           Seller: <%= link_to item.seller.name, user_path(item.seller) %>
                         <% else %>
