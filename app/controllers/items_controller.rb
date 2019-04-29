@@ -95,7 +95,8 @@ class ItemsController < ApplicationController
         @response=SellerResponse.new(response_text: params[:response_text], buyer_comment_id: params[:buyer_comment_id])
         if @response.save
             if @response.comment.buyer.response_notifications
-            NotificationMailer.with(seller: @item[0].seller, buyer: @response.comment.buyer, item: @item).response_email.deliver_now
+                NotificationMailer.with(seller: @item[0].seller, buyer: @response.comment.buyer, item: @item).response_email.deliver_now
+            end
             return redirect_to item_url(@item), notice: "Response sucessfully posted!"
         else
             return redirect_to item_url(@item), alert: 'Error: Unable to post reponse. Please limit response between 1 to 500 characters.'
