@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     layout 'standard'
-    before_action :authenticate_user!
+    before_action :persist_last_visited_path, :authenticate_user!
 
     def index
         @items = Item.all
@@ -79,6 +79,7 @@ class ItemsController < ApplicationController
         
         @comment=BuyerComment.new(item_id: params[:item_id][0].to_i, comment_text: params[:comment_text], user_id: params[:user_id][0].to_i)
         if @comment.save
+            NotificationMailer.with(seller: @item[0].seller, buyer: @comment.buyer, item: @item).comment_email.deliver_now
             return redirect_to item_url(@item), notice: "Comment sucessfully posted!"
         else
             return redirect_to item_url(@item), alert: 'Error: Unable to post comment. Please limit comment between 1 to 500 characters.'
