@@ -58,6 +58,14 @@ class User < ApplicationRecord
     validates :name,  presence: true, length: { maximum: 50 }
     validates :email, presence: true, length: { maximum: 255 }
 
+    def self.current
+        Thread.current[:user]
+    end
+
+    def self.current=(user)
+        Thread.current[:user] = user
+    end
+
     # instead of deleting, indicate the user requested a delete & timestamp it  
     def soft_delete  
         update_attribute(:deleted_at, Time.current)  

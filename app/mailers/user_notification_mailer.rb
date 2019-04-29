@@ -1,9 +1,10 @@
 class UserNotificationMailer < ApplicationMailer
     # default from: 'SellBackMart@gmail.com'
     #layout "mailer"
-    def item_update(item)
+    def match_update(match)
+        @match = match
         #@url  = 'http://example.com/login'
-        mail(to: 'ysun3@memphis.edu', subject: 'Welcome to My Awesome Site')
+        mail(to: @match.email, subject: 'A new item in your watch list has been posted!')
     end
 
 end

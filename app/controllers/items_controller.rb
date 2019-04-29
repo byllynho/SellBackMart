@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
 
     def create
         @item = Item.new(params.require(:item).permit(:avatar, :photo, :title, :price, :condition, :category_id, :description, :user_id))
+        
         if @item.save!
             if params[:images]
                 params[:images].each {|image|
@@ -21,6 +22,24 @@ class ItemsController < ApplicationController
                 }
             end
             redirect_to item_url(@item), notice: 'Your item has been successfully posted'
+
+            # for create watch item match
+
+            @watchlists = Watchlist.all
+            category_match = []
+            @watchlists.each do |watchlist|
+                watchlist.items.each do |watchitem|
+                    if watchitem.category == @item.category.id
+                        category_match << watchitem
+                    end
+                end
+            end
+            category_match.each do |watchitem|
+                if @item.title.to_s.downcase.include?(watchitem.title.to_s.downcase)
+                    @match = Match.create!(title: @item.title, email: watchitem.watchlist.user.email)
+                end
+            end
+
         else
             flash.now[:alert] = 'Error! Unable to post new item'
             render :new
