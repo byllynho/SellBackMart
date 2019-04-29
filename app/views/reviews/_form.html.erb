@@ -1,0 +1,19 @@
+
+<%= form_with model: review, local: true do |form| %>
+    <%= hidden_field_tag :user_id, user_id %>
+
+     <div class = "field">
+         <%= form.label :product %>  
+         <%= form.collection_select :product, @user.items.order(:title), :id,:title, {:prompt=>true}, {:class=>'form-control', :required=>'required'} %>
+     </div>
+
+     <div class = "field">
+         <%= form.label :description %>
+         <%= form.text_area :description, class:'form-control', required: 'required' %>
+     </div>
+
+     <div class = "actions">
+         <%= form.submit 'Post Item Review', class: 'btn btn-primary' %>
+     </div>
+
+<% end %>

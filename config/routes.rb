@@ -19,8 +19,18 @@ Rails.application.routes.draw do
   get 'messages/get_messages_from_user', to: 'messages#get_messages_from_user', as: 'get_messages_from_user'
   get 'messages', to: 'messages#index', as: 'messages'
   post 'check_messages', to: 'messages#check_messages', as: 'check_messages'
+  
+  #get 'reviews', to: 'reviews#index', as: 'reviews'
+  post 'reviews', to: 'reviews#create', as: 'reviews'
+  get 'reviews/view_review_:id/edit', to:'reviews#edit', as:'edit_review'
+  patch 'reviews/view_review_:id', to:'reviews#update', as:'review'
+  put 'reviews/view_review_:id', to:'reviews#update'
+  delete 'reviews/view_review_:id', to:'reviews#destroy'
 
   get 'items/new', to:'items#new', as:'post_new_item'
+  get 'users/:user_id/reviews/new', to:'reviews#new', as:'post_new_review'
+
+  #get 'reviews/view_review_:id', to:'reviews#view_review', as:'review'
 
   get 'items/view_item_:id/edit', to:'items#edit', as:'edit_item'
 
@@ -49,4 +59,14 @@ Rails.application.routes.draw do
   get 'users', to: 'users#index', as: 'users'
   get '*path', to: 'pages#bad_url'
 
+#  get 'reviews', to: 'reviews#index', as: 'reviews'
+#  post 'reviews', to: 'reviews#create'
+  
+
+#  get 'reviews/:id/edit', to:'reviews#edit', as:'edit_review'
+
+#  patch 'reviews/view_review_:id', to:'reviews#update'
+#  put 'reviews/view_review_:id', to:'reviews#update'
+
+#  get 'reviews/view_review_id', to:'reviews#view_review', as:'review'
 end

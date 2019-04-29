@@ -19,6 +19,7 @@
                     <a class="btn btn-primary" href="#" data-toggle="modal" style="width: 200px;" data-target="#myModal">Message Seller</a>
                     <br><br><a href="#" data-toggle="modal" data-target="#commentModal" class="btn btn-primary" style="width: 200px;">Post Comment</a>
                     <%= render 'modal_comment' %>
+                    <br><br>
                 </div>
         </div>
     <% end %> 
@@ -36,8 +37,8 @@
     <br> <strong> Category</strong> - <%=@item.category.description%>
     <br> <strong>Condition</strong> - <%=@item.condition%>
     <br> <strong>Description</strong> - <%=@item.description%> </p>
-    
 </div>
+
 <div class="col-md-6" style="display: inline-block">
    <p style='margin-bottom: .5em; text-decoration: underline'> <strong>Comments</strong> </p>
 
