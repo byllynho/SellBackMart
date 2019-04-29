@@ -16,7 +16,16 @@
     <% @watchlist.items.each do |item| %>
       <tr>
         <td><%= item.title%></td>
-        <td><%= item.category %></td>
+        <td>
+        <% if item.category == 1 %>
+          <%= 'Electronics' %>
+        <% end %>
+        <% if item.category == 2 %>
+          <%= 'Textbooks' %>
+        <% end %>
+        <% if item.category == 3 %>
+          <%= 'School Supplies' %></td>
+        <%end%> 
         <td><%= link_to 'Edit', edit_watch_item_path(item) %> | <%= link_to 'Delete', watch_item_path(item), method: :delete %></td>
       <% end %>
       </tr>
