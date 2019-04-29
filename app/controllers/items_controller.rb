@@ -79,7 +79,9 @@ class ItemsController < ApplicationController
         
         @comment=BuyerComment.new(item_id: params[:item_id][0].to_i, comment_text: params[:comment_text], user_id: params[:user_id][0].to_i)
         if @comment.save
-            NotificationMailer.with(seller: @item[0].seller, buyer: @comment.buyer, item: @item).comment_email.deliver_now
+            if @item[0].seller.comment_notifications
+                NotificationMailer.with(seller: @item[0].seller, buyer: @comment.buyer, item: @item).comment_email.deliver_now
+            end
             return redirect_to item_url(@item), notice: "Comment sucessfully posted!"
         else
             return redirect_to item_url(@item), alert: 'Error: Unable to post comment. Please limit comment between 1 to 500 characters.'
@@ -92,6 +94,8 @@ class ItemsController < ApplicationController
         
         @response=SellerResponse.new(response_text: params[:response_text], buyer_comment_id: params[:buyer_comment_id])
         if @response.save
+            if @response.comment.buyer.response_notifications
+            NotificationMailer.with(seller: @item[0].seller, buyer: @response.comment.buyer, item: @item).response_email.deliver_now
             return redirect_to item_url(@item), notice: "Response sucessfully posted!"
         else
             return redirect_to item_url(@item), alert: 'Error: Unable to post reponse. Please limit response between 1 to 500 characters.'

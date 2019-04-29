@@ -2,17 +2,21 @@
 #
 # Table name: users
 #
-#  id                     :integer          not null, primary key
-#  confirmation_sent_at   :datetime
-#  confirmation_token     :string
-#  confirmed_at           :datetime
-#  department             :string
-#  email                  :string           default(""), not null
-#  encrypted_password     :string           default(""), not null
-#  major                  :string
-#  name                   :string           not null
-#  reset_password_sent_at :datetime
-#  reset_password_token   :string
+#  id                      :integer          not null, primary key
+#  comment_notifications   :boolean          default(TRUE)
+#  confirmation_sent_at    :datetime
+#  confirmation_token      :string
+#  confirmed_at            :datetime
+#  department              :string
+#  email                   :string           default(""), not null
+#  encrypted_password      :string           default(""), not null
+#  major                   :string
+#  message_notifications   :boolean          default(TRUE)
+#  name                    :string           not null
+#  reset_password_sent_at  :datetime
+#  reset_password_token    :string
+#  response_notifications  :boolean          default(TRUE)
+#  watchlist_notifications :boolean          default(TRUE)
 #
 # Indexes
 #
