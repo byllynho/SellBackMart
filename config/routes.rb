@@ -31,11 +31,13 @@ Rails.application.routes.draw do
 
   get 'items/view_item_:id', to: 'items#view_item', as: 'item'
   get 'catalog', to: 'items#catalog', as: 'catalog'
-  get 'filter', to: 'items#filter', as: 'filter'
+  get 'filter', to: 'items#filter', as: 'filter'  
   post 'comment', to: 'items#comment', as: 'comment'
   post 'respond', to: 'items#respond', as: 'respond'
   
   delete 'items/view_item_:id', to:'items#destroy'
+  delete 'pictures/view_item_:id', to:'pictures#destroy', as:'picture'
+
   get 'open_page', to:'users#open_page', as:'open_page'
   get 'users/my_profile/edit', to: 'users#edit', as: 'edit_my_profile'
 
