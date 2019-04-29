@@ -59,7 +59,13 @@ class Item < ApplicationRecord
         foreign_key: 'item_id', 
         inverse_of: :item
         # dependent: :destroy
-
+    
+    has_one :review,
+        class_name: 'Review',
+        foreign_key: 'item_id',
+        inverse_of: :item,
+        dependent: :destroy
+        
     has_many :comments,
         class_name: 'BuyerComment',
         foreign_key: 'item_id',
