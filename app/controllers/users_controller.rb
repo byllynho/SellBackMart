@@ -46,16 +46,17 @@ class UsersController < ApplicationController
     end
   end
 
-  # def cancel_my_account
-  #   @user = User.find(current_user.id)
-  #   if @user.destroy_with_password(params[:user][:current_password])
-         
-  #   else
-  #     flash[:alert] = 'Error! Unable to cancel your account!'
-  #     render :edit 
+  def destroy
+    @user = current_user
+    if @user.valid_password?(params[:user][:current_password])
+      @user.destroy
+   
+    else
+      flash[:alert] = 'Error! Unable to cancel your account!'
+      render :edit 
       
-  #   end
-  # end
+    end
+  end
 
  
   
