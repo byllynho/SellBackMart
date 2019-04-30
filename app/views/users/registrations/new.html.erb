@@ -35,14 +35,17 @@
               <%= f.label :password %>
               <div class="controls">
                 <%= f.password_field :password, autocomplete: "new-password", class: "form-control input-sm", required: "required" %>
-                <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
-                <% end %><br />
+                 <% if @minimum_password_length %>
+                      <p><em>Length should be <%= @minimum_password_length %>-70 characters.</em><br/> 
+                      <em>Please include: </em><br/>
+                      <em>At least 1 uppercase</em><br/>
+                      <em>At least 1 lowercase</em><br/>
+                      <em>At least 1 digit</em><br/>
+                      <em>At least 1 special character</em></p>
+                    <% end %>
               </div>    
             </div> 
-
-            <br> 
-
+            
             <div class="control-group">
               <%= f.label :password_confirmation %><br />
               <div class="controls">
