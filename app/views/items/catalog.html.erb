@@ -15,6 +15,10 @@
                 &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', category.id, value=(!@category_ids.blank? && @category_ids.include?(category.id.to_s)) %>  <%= category.description %> <br>
                 <% end %>
             </p>
+            <p style="margin: .1em">Search</p>
+            <div style="margin-bottom: 1em">
+                <%= text_field_tag :search, params[:search] %>
+            </div>
            <p style="text-align: center"> <%= submit_tag 'Submit' %> </p>
         </div>
         <div class="col-md-8" style="text-align: right; float: left">
