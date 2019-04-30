@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
     layout 'standard'
     before_action :authenticate_user!
-
+    
     def index
         @items = Item.all
         # render 'items/index.html.erb'

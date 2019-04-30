@@ -55,14 +55,26 @@
     <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
       <p><table class="table table-sm">
         <thead>
-        <tr>
-        
-        <th scope="col">Item</th>
-        <th scope="col">Review</th>
-        <th scope="col">Buyer</th>
-        </tr>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Review</th>
+            <th scope="col">Buyer</th>
+          </tr>
         </thead>
       <tbody>
+          <% @user.reviews.each do |review|%>
+            <tr>
+              <td>
+                <% @item = Item.find(review.product)%>
+                <%= @item.title %>
+              </td>
+              <td><%= review.description %></td>
+              <td>
+                <%=link_to review.owner, user_url(review.reviewer) %>
+              </td>
+            </tr>
+          <% end %>
+<!--
           <tr>
             <% if !@deals.empty? %>
               <% @deals.each do |record|  %>
@@ -74,6 +86,7 @@
               <td colspan="3" style="text-align: center">You have not sold any item!</td>
             <% end %>
           </tr>
+-->
       </tbody>
      </table></p>
   
