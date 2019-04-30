@@ -12,7 +12,7 @@
             <p>
                 <b>Categories</b> <br>
                 <% Category.all.each do |category| %>
-                &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', category.id %>  <%= category.description %> <br>
+                &nbsp &nbsp &nbsp <%= check_box_tag 'categories[]', category.id, value=(!@category_ids.blank? && @category_ids.include?(category.id.to_s)) %>  <%= category.description %> <br>
                 <% end %>
             </p>
            <p style="text-align: center"> <%= submit_tag 'Submit' %> </p>

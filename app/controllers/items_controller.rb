@@ -66,11 +66,13 @@ class ItemsController < ApplicationController
     
     def catalog
         @items = Item.all.sort_by {|item| item.category_id}
+        @category_ids = Category.all.pluck(:id).to_s
         # render items/catalog.html.erb
     end
 
     def filter
         @items = Item.where("category_id IN (?)", params[:categories])
+        @category_ids = params[:categories]
         render "items/catalog.html.erb"
     end
 
