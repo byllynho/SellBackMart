@@ -8,9 +8,8 @@
     
 <div id="left">
   <%= image_tag("1200px-Memphis_Tigers_logo.svg.png", :size => "240x200", :alt => "Memphis Tiger Logo") %>
-    <div id ="button">
-      <input type="button" value="Send Message">
-    </div>
+    <a class="btn btn-primary" href="#" data-toggle="modal" style="width: 200px;" data-target="#myModal">Message Seller</a>
+<%= render partial: "messages/send_message_modal", locals: { message: @message, user: @user } %>
 </div>
 
 <div id="right">
