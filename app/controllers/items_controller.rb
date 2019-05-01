@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     layout 'standard'
-    before_action :persist_last_visited_path, :authenticate_user!
+    before_action :authenticate_user!
 
     # def index
     #     @items = Item.all

@@ -58,8 +58,12 @@
           <% @user.reviews.each do |review|%>
             <tr>
               <td>
+                <% begin %>
                 <% @item = Item.find(review.product)%>
                 <%= @item.title %>
+                <% rescue %>
+                Associated item has been deleted.
+                <% end %>
               </td>
               <td>
                 <%= review.description %><br>
