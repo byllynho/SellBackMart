@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
 
     def create
         @item = Item.new(params.require(:item).permit(:avatar, :photo, :title, :price, :condition, :category_id, :description, :user_id))
-        
         if @item.save!
             if params[:images]
                 params[:images].each {|image|
@@ -24,13 +23,15 @@ class ItemsController < ApplicationController
             redirect_to item_url(@item), notice: 'Your item has been successfully posted'
 
             # for create watch item match
-
+        
             @watchlists = Watchlist.all
             category_match = []
             @watchlists.each do |watchlist|
-                watchlist.items.each do |watchitem|
-                    if watchitem.category == @item.category.id
-                        category_match << watchitem
+                if watchlist.user.watchlist_notifications
+                    watchlist.items.each do |watchitem|
+                        if watchitem.category == @item.category.id
+                            category_match << watchitem
+                        end
                     end
                 end
             end

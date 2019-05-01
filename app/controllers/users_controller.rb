@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.valid_password?(params[:user][:current_password]) && @user.update(params.require(:user).permit(:department, :major))
+    if @user.valid_password?(params[:user][:current_password]) && @user.update(params.require(:user).permit(:department, :major, :watchlist_notifications, :response_notifications, :message_notifications, :comment_notifications))
       redirect_to my_profile_url(@user), notice:'Your information was successfully updated'
     else
       flash.now[:alert] = 'Error! Unable to update your information!'
