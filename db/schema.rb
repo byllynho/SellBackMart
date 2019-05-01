@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_04_29_143851) do
-=======
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_04_29_211141) do
-=======
-
-ActiveRecord::Schema.define(version: 2019_04_29_211141) do
-
->>>>>>> 35ace08976d9528e3e3e0e3765bfd7804fd48df8
->>>>>>> master
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -159,10 +149,7 @@ ActiveRecord::Schema.define(version: 2019_04_29_211141) do
     t.boolean "response_notifications", default: true
     t.boolean "message_notifications", default: true
     t.boolean "watchlist_notifications", default: true
-<<<<<<< HEAD
-=======
     t.datetime "deleted_at"
->>>>>>> master
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

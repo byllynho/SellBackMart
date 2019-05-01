@@ -76,6 +76,14 @@ class User < ApplicationRecord
         errors.add :password, 'Complexity requirement not met. Please use: at least 1 uppercase, 1 lowercase, 1 digit and 1 special character.'
     end
 
+    def self.current
+        Thread.current[:user]
+    end
+
+    def self.current=(user)
+        Thread.current[:user] = user
+    end
+
 
     # instead of deleting, indicate the user requested a delete & timestamp it  
     def soft_delete  
