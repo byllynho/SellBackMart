@@ -13,6 +13,29 @@
   </head>
 
   <body>
+  <script>
+    $(document).ready(function(){
+      setInterval(function() {
+          // send ajax when mouse enters hoverable object
+          $.ajax({
+              type: "POST",
+              url: "/check_messages",
+              data: '', // pass any additional parameters if you need
+              dataType: 'json',
+              success: function(data) {
+                   // do something on success e.g. console log the message
+                  if(data == 1) {
+                    $('#messages_menu').attr('style','border: 2px solid red')
+                  } else {
+                    $('#messages_menu').attr('style','')
+                  }
+                   
+              },
+              
+          });
+        }, 10000);
+      });
+    </script>
     <!--==========================
       Header
     ============================-->
@@ -32,6 +55,7 @@
               <li><%= link_to "Home", root_path() %></li>
             <% else %>
               <li><%= link_to "Catalog", catalog_path %></li>
+              <li><%= link_to "Messages", messages_path , id: 'messages_menu' %></li>
               <li><%= link_to "Users Profile", users_path %></a></li>
               <li></li>
               <li class="menu-has-children"><a href="#"><%= current_user.name %></a>

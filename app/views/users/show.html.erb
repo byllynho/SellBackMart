@@ -7,10 +7,13 @@
     
 <div id="left">
   <%= image_tag("1200px-Memphis_Tigers_logo.svg.png", :size => "240x200", :alt => "Memphis Tiger Logo") %>
-    <div id ="button">
-      <input type="button" value="Send Message">
+    <div>
+      <br>
+      <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#myModal">Send Message</a>
     </div>
 </div>
+
+<%= render partial: "messages/send_message_modal", locals: { message: @message, user: @user } %>
 
 <div id="right">
   <ul class="nav nav-tabs" id="myTab" role="tablist">

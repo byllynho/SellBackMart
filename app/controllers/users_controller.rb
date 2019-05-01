@@ -8,12 +8,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    @message = Message.new
+
     @deals = []
     @user.items.each do |record| 
       if record.settlement
         @deals.push(record)
       end
     end
+
   end
   
   def index

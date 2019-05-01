@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   get 'items', to: 'items#index', as: 'items'
   post 'items', to: 'items#create'
 
+  post 'messages', to: 'messages#send_message', as: 'send_message'
+  post 'messages/send_messages_ajax', to: 'messages#send_messages_ajax', as: 'send_messages_ajax'
+  get 'messages/get_messages_from_user', to: 'messages#get_messages_from_user', as: 'get_messages_from_user'
+  get 'messages', to: 'messages#index', as: 'messages'
+  post 'check_messages', to: 'messages#check_messages', as: 'check_messages'
+  
   #get 'reviews', to: 'reviews#index', as: 'reviews'
   post 'reviews', to: 'reviews#create', as: 'reviews'
   get 'reviews/view_review_:id/edit', to:'reviews#edit', as:'edit_review'
