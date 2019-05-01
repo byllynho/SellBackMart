@@ -63,6 +63,22 @@ class User < ApplicationRecord
 
     validates :name,  presence: true, length: { maximum: 50 }
     validates :email, presence: true, length: { maximum: 255 }
+    validate :password_complexity
+
+    def password_complexity
+        # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+        return if password.blank? || password =~ /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/
+    
+        errors.add :password, 'Complexity requirement not met. Please use: at least 1 uppercase, 1 lowercase, 1 digit and 1 special character.'
+    end
+
+    def self.current
+        Thread.current[:user]
+    end
+
+    def self.current=(user)
+        Thread.current[:user] = user
+    end
 
 
     # instead of deleting, indicate the user requested a delete & timestamp it  
@@ -79,4 +95,5 @@ class User < ApplicationRecord
     def inactive_message   
   	    !deleted_at ? super : :deleted_account  
     end  
+
 end

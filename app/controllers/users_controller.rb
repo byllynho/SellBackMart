@@ -8,16 +8,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-    @message = Message.new
-
     @deals = []
     @user.items.each do |record| 
       if record.settlement
         @deals.push(record)
       end
     end
-
   end
   
   def index
@@ -47,18 +43,6 @@ class UsersController < ApplicationController
     else
       flash.now[:alert] = 'Error! Unable to update your information!'
       render :edit
-    end
-  end
-
-  def destroy
-    @user = current_user
-    if @user.valid_password?(params[:user][:current_password])
-      @user.destroy
-   
-    else
-      flash[:alert] = 'Error! Unable to cancel your account!'
-      render :edit 
-      
     end
   end
 

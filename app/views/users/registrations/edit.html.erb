@@ -15,10 +15,14 @@
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+   <% if @minimum_password_length %>
+                      <p><em>Length should be <%= @minimum_password_length %>-70 characters.</em><br/> 
+                      <em>Please include: </em><br/>
+                      <em>At least 1 uppercase</em><br/>
+                      <em>At least 1 lowercase</em><br/>
+                      <em>At least 1 digit</em><br/>
+                      <em>At least 1 special character</em></p>
+                    <% end %>
   </div>
 
   <div class="field">

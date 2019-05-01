@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# user_1 = User.create!(name: "Thomas Edison", email: "eth3@memphis.edu", password: "123456", department: "Computer Science", 
+# user_1 = User.create!(name: "Thomas Edison", email: "eth3@memphis.edu", password: "Sbm123456$", department: "Computer Science", 
 #     major:"Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
 #     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00" )
 
@@ -17,12 +17,12 @@
 # # user_3 = User.create!(name: "Admin Istrator", email: "admin@memphis.edu", major: "Computer Science", 
 # #     department: "Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
 # #     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00",
-# #     password: "123456" )
+# #     password: "Sbm123456$" )
 
 # user_4 = User.create!(name: "Andrew", email: "andrew@memphis.edu", major: "Computer Science", 
 #     department: "Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
 #     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00",
-#     password: "123456" )
+#     password: "Sbm123456$" )
 
 # cat_1 = Category.create!(description:"Electronics")
 # cat_2 = Category.create!(description:"Textbooks")
@@ -65,7 +65,7 @@ elec = Category.create!(description:"Electronics")
 text = Category.create!(description:"Textbooks")
 school = Category.create!(description:"School Supplies")
 
-thomas = User.create!(name: "Thomas Edison", email: "thomas@memphis.edu", password: "123456", department: "Herff College of Engineering", 
+thomas = User.create!(name: "Thomas Edison", email: "thomas@memphis.edu", password: "Sbm123456$", department: "Herff College of Engineering", 
     major:"Electrical Engineering", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00" )
 
@@ -77,7 +77,7 @@ thomas = User.create!(name: "Thomas Edison", email: "thomas@memphis.edu", passwo
 
 thomas.save!
 
-isaac = User.create!(name: "Isaac Newton", email: "isaac@memphis.edu", password: "123456", department: "Physics", 
+isaac = User.create!(name: "Isaac Newton", email: "isaac@memphis.edu", password: "Sbm123456$", department: "Physics", 
     major:"Classical Physics" ,confirmed_at: "Thu, 07 Apr 2019 010:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 07 Apr 2019 10:54:31 UTC +00:00")
 
@@ -87,13 +87,13 @@ isaac = User.create!(name: "Isaac Newton", email: "isaac@memphis.edu", password:
 
 isaac.save!
 
-phil = User.create!(name: "Freshman Phil", email: "phil@memphis.edu", password: "123456", department: "Undecided", 
+phil = User.create!(name: "Freshman Phil", email: "phil@memphis.edu", password: "Sbm123456$", department: "Undecided", 
     major:"Undecided" ,confirmed_at: "Thu, 07 Apr 2019 010:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 07 Apr 2019 10:54:31 UTC +00:00")
 
 phil.save!
 
-billy = User.create!(name: "Billy Graham", email: "billy@memphis.edu", password: "123456", department: "School of Religion and Philosophy", 
+billy = User.create!(name: "Billy Graham", email: "billy@memphis.edu", password: "Sbm123456$", department: "School of Religion and Philosophy", 
     major:"Biblical Preaching" ,confirmed_at: "Thu, 07 Apr 2019 010:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 07 Apr 2019 10:54:31 UTC +00:00")
 
@@ -112,8 +112,8 @@ joy.update(inactive: true)
 
 admin = User.create!(name: "Admin Istrator", email: "admin@memphis.edu", major: "Computer Science", 
     department: "Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
-    confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00",
-    password: "123456" )
+    confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00", password: "Sbm123456$" )
+
 
 
 
@@ -124,7 +124,8 @@ watchitem1 = WatchItem.create!(title: 'apple', category: 3, watchlist_id: watchl
 admin.save!
 
 
-rain = User.create!(name: "Rain", email: "ysun3@memphis.edu", password: "123456", department: "Herff College of Engineering", 
+
+rain = User.create!(name: "Rain", email: "ysun3@memphis.edu", password: "Sbm123456$", department: "Herff College of Engineering",
     major:"Electrical Engineering", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00" )
 
