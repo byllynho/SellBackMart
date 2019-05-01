@@ -1,0 +1,18 @@
+<% provide(:title,'SellBackMart - View Item')%>
+
+<main role="main" style="height: 700px; overflow-y: scroll !important">
+
+  <p>Reviews are posted</p>
+
+  <p><b>Title:</b><%= @review.product%>
+  </p>
+  <p><b>Description:</b><%= @review.description%></p>
+  <p><b>Owner:</b>
+    <% @user = User.find(params[:id]) %>
+    <%= @user.name %>
+  </p>  
+  <p><b>Reviewed by</b>
+    <%= current_user.name %>
+  </p>
+
+</main>

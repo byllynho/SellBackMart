@@ -1,0 +1,30 @@
+<% provide(:title,'SellBackMart - New Watch Item') %>
+
+<main role ="main" class ="container">
+
+<h1>New Watch Item </h1>
+
+  <%= form_for (@watch_item) do |form| %>
+     
+     <div class = "field">
+         <%= form.label :title %>
+         <%= form.text_field :title, class:'form-control', required: 'required' %>
+     </div>
+
+
+     <div class = "field">
+         <%= form.label :category %>
+         <%= form.collection_select :category, Category.order(:description), :id,:description, {:prompt=>true}, {:class=>'form-control', :required=>'required'} %>
+     </div>
+
+     
+
+     <div class = "actions">
+         <%= form.submit 'Add Watch Item' %>
+     </div>
+  <% end %>
+
+  <p>
+    <%= link_to 'Back',watchlist_path %>
+  </p>
+</main><!-- /.container -->

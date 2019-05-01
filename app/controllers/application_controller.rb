@@ -1,8 +1,14 @@
 class ApplicationController < ActionController::Base
+<<<<<<< HEAD
     before_action :persist_last_visited_path, :configure_permitted_parameters, if: :devise_controller?
 
+=======
+    #around_action :set_current_user
+    before_action :configure_permitted_parameters, if: :devise_controller?
+    
+>>>>>>> master
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :department, :major])
     end
     
 
@@ -13,6 +19,16 @@ class ApplicationController < ActionController::Base
             catalog_path() #your path
         end
     end
+
+    # def set_current_user
+    #     Current.user = current_user
+    #     yield
+    #   ensure
+    #     # to address the thread variable leak issues in Puma/Thin webserver
+    #     Current.user = nil
+    #   end             
+    # end
+
 
     protected
     def after_confirmation_path_for(resource_name, resource)

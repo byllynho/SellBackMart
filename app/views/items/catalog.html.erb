@@ -30,16 +30,36 @@
     <div class="col-md-9 border_around_catalog">
         <% if !@items.blank? %>
             <% @items.each do |item| %>
+            <%if !item.seller.deleted_at%>
                 <div class='catalog_items', style='border: 1px solid #6eadff; display: inline-block; border-radius: 5px; margin-right: .5em; margin-left: 1.5em; margin-bottom: .5em; padding: 1em; margin-top: 1em'>
                     <div style='border: 1px solid #6eadff; display: inline-block'><%=link_to image_tag(item.avatar.url, size: '175x175'), item_path(item)%></div>
                     <div style='margin-top: 0.5em'>
                         <%= link_to item.title, item_path(item) %><br>
                         <%= number_to_currency(item.price) %><br>
                         Posted: <%= item.created_at.strftime("%b %d, %Y") %><br>
-                        Seller: <%= link_to item.seller.name, user_path(item.seller) %><br>
-                        
+                        <% if item.inactive == false %>
+                          <div class="card-footer", style='background-color: green; color:white; text-align:center'>
+                            Status: Available
+                          </div>
+                          <% if !current_user.items.include?(item) %>
+                          Seller: <%= link_to item.seller.name, user_path(item.seller) %>
+                        <% else %>
+                          Seller: <%= link_to 'SELF', my_profile_path() %>
+                        <% end %>
+                        <% else %>
+                          <div class="card-footer", style='background-color: red; color:white; text-align:center'>
+                            Status: Sold
+                          </div>
+                        <% if !current_user.items.include?(item) %>
+                          Seller: <%= link_to item.seller.name, user_path(item.seller) %>
+                        <% else %>
+                          Seller: <%= link_to 'SELF', my_profile_path() %>
+                        <% end %>
+                      <% end %>
                     </div>
+                    
                 </div>
+            <% end %>
                 
             <% end %>
         <% else %>

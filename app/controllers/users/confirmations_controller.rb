@@ -2,7 +2,7 @@
 
 class Users::ConfirmationsController < Devise::ConfirmationsController
 
-  layout 'standard'
+  layout 'first_page'
 
   # GET /resource/confirmation/new
   # def new
