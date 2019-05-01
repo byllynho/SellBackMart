@@ -37,6 +37,11 @@
                           <div class="card-footer", style='background-color: green; color:white; text-align:center'>
                             Status: Available
                           </div>
+                          <% if !current_user.items.include?(item) %>
+                          Seller: <%= link_to item.seller.name, user_path(item.seller) %>
+                        <% else %>
+                          Seller: <%= link_to 'SELF', my_profile_path() %>
+                        <% end %>
                         <% else %>
                           <div class="card-footer", style='background-color: red; color:white; text-align:center'>
                             Status: Sold
@@ -46,7 +51,9 @@
                         <% else %>
                           Seller: <%= link_to 'SELF', my_profile_path() %>
                         <% end %>
+                      <% end %>
                     </div>
+                    
                 </div>
             <% end %>
                 
