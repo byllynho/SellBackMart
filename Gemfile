@@ -70,4 +70,4 @@ gem 'jquery-rails'
 gem "paperclip", "~> 6.0.0"
 
 gem 'devise'
-
+gem 'rails-observers'

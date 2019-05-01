@@ -1,0 +1,39 @@
+<% provide(:title,'SellBackMart - My Watch List') %>
+
+
+<h2> My Watch List </h1>
+
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Category</th>
+        <th scope="col"> </th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @watchlist.items.each do |item| %>
+      <tr>
+        <td><%= item.title%></td>
+        <td>
+        <% if item.category == 1 %>
+          <%= 'Electronics' %>
+        <% end %>
+        <% if item.category == 2 %>
+          <%= 'Textbooks' %>
+        <% end %>
+        <% if item.category == 3 %>
+          <%= 'School Supplies' %></td>
+        <%end%> 
+        <td><%= link_to 'Edit', edit_watch_item_path(item) %> | <%= link_to 'Delete', watch_item_path(item), method: :delete %></td>
+      <% end %>
+      </tr>
+    </tbody>
+    </table>
+
+<p>
+  <%= link_to 'Add new watch item', add_new_watch_item_path %>
+</p>
+
+<%= link_to 'Back',my_profile_path %>

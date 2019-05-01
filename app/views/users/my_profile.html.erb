@@ -43,6 +43,13 @@
 
       </div>
       <%= button_to "Update my profile", edit_my_profile_path, :class => "button", :method => :get %> 
+
+      <% if @user.watchlist%>
+        <%= link_to "my watch list", watchlist_path, :method => :get %>
+      <%else%>
+        <%= link_to "Create my watch list",watchlist_path, :method => :create %>
+      <%end%>
+
       
 
     </div>
