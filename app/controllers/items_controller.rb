@@ -91,9 +91,9 @@ class ItemsController < ApplicationController
 
     def filter
         if params[:search].blank?
-            @items = Item.where("category_id IN (?)", params[:categories])
+            @items = Item.where("category_id IN (?) AND (inactive = ? OR inactive = ?)", params[:categories], params[:sold], 0)
         else
-            @items = Item.where("category_id IN (?) AND title LIKE ?", params[:categories], "%#{params[:search]}%")
+            @items = Item.where("category_id IN (?) AND title LIKE ? AND (inactive = ? OR inactive = ?)", params[:categories], "%#{params[:search]}%", params[:sold],0)
         end
         @category_ids = params[:categories]
         render "items/catalog.html.erb"

@@ -19,6 +19,7 @@
             <div style="margin-bottom: 1em">
                 <%= text_field_tag :search, params[:search] %>
             </div>
+            Include sold items? <%= check_box_tag 'sold', 1, value=params[:sold] %> <br><br>
            <p style="text-align: center"> <%= submit_tag 'Submit' %> </p>
         </div>
         <div class="col-md-8" style="text-align: right; float: left">
