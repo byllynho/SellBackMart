@@ -112,8 +112,8 @@ joy.update(inactive: true)
 
 admin = User.create!(name: "Admin Istrator", email: "admin@memphis.edu", major: "Computer Science", 
     department: "Computer Science", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
-    confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00",
-    password: "Sbm123456$" )
+    confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00", password: "Sbm123456$" )
+
 
 
 
@@ -124,7 +124,8 @@ watchitem1 = WatchItem.create!(title: 'apple', category: 3, watchlist_id: watchl
 admin.save!
 
 
-rain = User.create!(name: "Rain", email: "ysun3@memphis.edu", password: "Sbm123456$", department: "Herff College of Engineering", 
+
+rain = User.create!(name: "Rain", email: "ysun3@memphis.edu", password: "Sbm123456$", department: "Herff College of Engineering",
     major:"Electrical Engineering", confirmed_at: "Thu, 04 Apr 2019 04:55:06 UTC +00:00 ",
     confirmation_sent_at: "Thu, 04 Apr 2019 04:54:31 UTC +00:00" )
 
