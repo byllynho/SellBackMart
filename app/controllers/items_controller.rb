@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
     layout 'standard'
-    before_action :authenticate_user!
-    
-    def index
-        @items = Item.all
-        # render 'items/index.html.erb'
-    end
+    before_action :persist_last_visited_path, :authenticate_user!
+
+    # def index
+    #     @items = Item.all
+    #     # render 'items/index.html.erb'
+    # end
 
     def new
         @item = Item.new
@@ -84,12 +84,18 @@ class ItemsController < ApplicationController
     end
     
     def catalog
-        @items = Item.all
+        @items = Item.all.sort_by {|item| item.category_id}
+        @category_ids = Category.all.pluck(:id).to_s
         # render items/catalog.html.erb
     end
 
     def filter
-        @items = Item.where("category_id IN (?)", params[:categories])
+        if params[:search].blank?
+            @items = Item.where("category_id IN (?)", params[:categories])
+        else
+            @items = Item.where("category_id IN (?) AND title LIKE ?", params[:categories], "%#{params[:search]}%")
+        end
+        @category_ids = params[:categories]
         render "items/catalog.html.erb"
     end
 
@@ -98,6 +104,9 @@ class ItemsController < ApplicationController
         
         @comment=BuyerComment.new(item_id: params[:item_id][0].to_i, comment_text: params[:comment_text], user_id: params[:user_id][0].to_i)
         if @comment.save
+            if @item[0].seller.comment_notifications
+                NotificationMailer.with(seller: @item[0].seller, buyer: @comment.buyer, item: @item).comment_email.deliver_now
+            end
             return redirect_to item_url(@item), notice: "Comment sucessfully posted!"
         else
             return redirect_to item_url(@item), alert: 'Error: Unable to post comment. Please limit comment between 1 to 500 characters.'
@@ -110,6 +119,9 @@ class ItemsController < ApplicationController
         
         @response=SellerResponse.new(response_text: params[:response_text], buyer_comment_id: params[:buyer_comment_id])
         if @response.save
+            if @response.comment.buyer.response_notifications
+                NotificationMailer.with(seller: @item[0].seller, buyer: @response.comment.buyer, item: @item).response_email.deliver_now
+            end
             return redirect_to item_url(@item), notice: "Response sucessfully posted!"
         else
             return redirect_to item_url(@item), alert: 'Error: Unable to post reponse. Please limit response between 1 to 500 characters.'

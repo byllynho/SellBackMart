@@ -18,6 +18,26 @@
     <%= f.password_field :current_password,  autocomplete: "current-password" %>
   </div>
   
+<div class="field">
+    <%= f.label :comment_notifications %>
+    <%= f.check_box :comment_notifications %>
+  </div>
+
+  <div class="field">
+    <%= f.label :response_notifications %>
+    <%= f.check_box :response_notifications %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message_notifications %>
+    <%= f.check_box :message_notifications %>
+  </div>
+
+  <div class="field">
+    <%= f.label :watchlist_notifications %>
+    <%= f.check_box :watchlist_notifications %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update",  class: "btn btn-primary" %>
   </div>

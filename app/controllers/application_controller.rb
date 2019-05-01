@@ -1,13 +1,17 @@
 class ApplicationController < ActionController::Base
-    #around_action :set_current_user
-    before_action :configure_permitted_parameters, if: :devise_controller?
-    
+    before_action :persist_last_visited_path, :configure_permitted_parameters, if: :devise_controller?
+
     def configure_permitted_parameters
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :department, :major])
     end
+    
 
     def after_sign_in_path_for(resource)
-        catalog_path() #your path
+        if session[:last_visited_path].present?
+            session[:last_visited_path]
+        else
+            catalog_path() #your path
+        end
     end
 
     # def set_current_user
@@ -25,7 +29,11 @@ class ApplicationController < ActionController::Base
         catalog_path()
     end
 
+    private
+    def persist_last_visited_path
+        unless Rails.configuration.ignored_paths.include?(request.path) || request.xhr?
+            session[:last_visited_path] = request.path
+        end
+    end
 
-
-    
 end

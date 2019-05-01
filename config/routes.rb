@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  get 'items', to: 'items#index', as: 'items'
+  #get 'items', to: 'items#index', as: 'items'
   post 'items', to: 'items#create'
 
   post 'messages', to: 'messages#send_message', as: 'send_message'

@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2019_04_29_211141) do
-
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -87,7 +85,7 @@ ActiveRecord::Schema.define(version: 2019_04_29_211141) do
     t.integer "sender_id"
     t.integer "recipient_id"
     t.text "content", null: false
-    t.boolean "read", default: false
+    t.boolean "read"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipient_id"], name: "index_messages_on_recipient_id"
@@ -147,6 +145,10 @@ ActiveRecord::Schema.define(version: 2019_04_29_211141) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean "comment_notifications", default: true
+    t.boolean "response_notifications", default: true
+    t.boolean "message_notifications", default: true
+    t.boolean "watchlist_notifications", default: true
     t.datetime "deleted_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
