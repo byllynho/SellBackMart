@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   get 'users/my_profile/edit', to: 'users#edit', as: 'edit_my_profile'
 
   patch 'users/:id', to:'users#update'
+  #delete 'users/:id', to:'users/registrations#destroy'
   #put 'users/:id', to:'users#update'
 
   get 'users/my_profile', to: 'users#my_profile', as: 'my_profile'

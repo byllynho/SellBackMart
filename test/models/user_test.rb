@@ -6,6 +6,7 @@
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
+#  deleted_at             :datetime
 #  department             :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
