@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
     layout 'standard'
     before_action :authenticate_user!
-
+    
     def index
         @items = Item.all
         # render 'items/index.html.erb'
@@ -75,7 +75,7 @@ class ItemsController < ApplicationController
     def view_item
         begin
             @item = Item.find(params[:id])
-
+            @message = Message.new
         rescue
             redirect_to catalog_url, alert: "Sorry. The item you requested does not exist."
             

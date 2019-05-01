@@ -6,15 +6,32 @@
 
   <%= form_with model: @item, local:true, html: { multipart: true } do |form| %>
      <div class = "field">
-         <%= form.label :image %>
+         <%= form.label :Upload_a_main_image_for_your_item %><br>
          <%= form.file_field :avatar %>
      </div>
 
+     <% if @item.avatar.exists? %>
+       <b>Current main image:</b><br>
+       <%= image_tag @item.avatar.url(:thumb) %><br><br>
+     <% end %>
+
      <div class = "field">
-         <%= form.label :more_photos %>
+         <%= form.label :Upload_additional_photos_of_the_item %><br>
          <%= file_field_tag "images[]", type: :file, multiple: true %>
      </div>
 
+     
+      <% if @item.pictures.exists? %>
+      <b>Existing photos of item:</b><br>
+        <% @item.pictures.each do |photo| %>
+            <div style="display:inline-block;">  
+              <div class="card", style="width:10rem;padding:0.2rem">
+                 <%= image_tag(photo.image.url,size: '150x150') %>
+                 <%= link_to 'Delete-Image',picture_path(photo),method: :delete, class: 'btn btn-primary' %>
+              </div>
+            </div>
+        <% end %>
+      <% end %>
 
      <div class = "field">
          <%= form.label :title %>

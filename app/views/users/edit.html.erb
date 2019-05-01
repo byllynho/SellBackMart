@@ -19,26 +19,12 @@
   </div>
   
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update",  class: "btn btn-primary" %>
   </div>
 <% end %>
 
-
-  <h3>Cancel my account</h3>
-  <%= form_for(resource, as:resource_name, url: registration_path(resource_name), data: { confirm: "Are you sure?" }, html: {method: :delete}) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password,  autocomplete: "current-password" %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Cancel my account'%>
-  </div>
-<% end %>
-
-    
-  
-
-
-
-  <%= link_to "Back", :back %>
+<div>
+<p><%= link_to "Back", :back %> </p>
+<p style = "text-align: right"><font size="2" color="#1c87c9"><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></font>
+</p>
+</div>

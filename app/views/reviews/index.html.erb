@@ -1,0 +1,28 @@
+<main class='container'>
+  <p>
+  This works!
+  </p>
+
+  <table class="table table-sm">
+    <thead>
+        <tr>
+        <th scope="col">Item</th>
+        <th scope="col">Review</th>
+        <th scope="col">Buyer</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @reviews.each do |record| %>
+        <tr>
+          <td><%= record.product %></td>
+          <td><%= record.description %></td>
+          <td>
+              <% @user = User.find(record.user_id)%> 
+              <%= link_to @user.name, my_profile_url(@user) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</main>

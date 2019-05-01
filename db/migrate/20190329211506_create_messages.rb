@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration[5.2]
       t.references :sender
       t.references :recipient
       t.text :content, null: false
-      t.boolean :read
+      t.boolean :read, default: false
 
       t.timestamps
     end
