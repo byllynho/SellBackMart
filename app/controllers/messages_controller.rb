@@ -31,6 +31,9 @@ class MessagesController < ApplicationController
 
         respond_to do |format|
             if @message.save
+                if @message.recipient.message_notifications
+                    NotificationMailer.with(sender: @message.sender, recipient: @message.recipient).message_email.deliver_now
+                end
                 format.html { redirect_to @message, notice: 'Comment was successfully created.' }
                 format.js   { }
                 format.json { render json: 'Sent!', status: :created, location: @message }
