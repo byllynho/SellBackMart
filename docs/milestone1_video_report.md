@@ -2,7 +2,7 @@
 
 - Project: SellBackMart
 - Iteration: Milestone 1
-- Demo Video URL: < https://youtu.be/xKnVdnnZxLI>
+- Demo Video URL: https://youtu.be/xKnVdnnZxLI
 
 ## Who Did What
 
