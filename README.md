@@ -1,8 +1,6 @@
-# SellBackMart (Project Nickname)
+# SellBackMart
 
 ## How to Run the Web App (Instructions for the Instructors)
-
-***Modify the instructions below if necessary.***
 
 - `bundle install`
 - 'sudo apt-get install imagemagick' to get photo uploads to work
